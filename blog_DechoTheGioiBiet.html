@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Male_Fashion Template" />
+    <meta name="keywords" content="Male_Fashion, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MY SHOP</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWNSOME  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- linearicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
+
+    <!-- LINK BOOTSTRAP  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3">
+            <div class="header__logo">
+              <a href="./index.html">
+                <img src="./img/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="navbar col-lg-6 col-md-6">
+            <nav class="header__menu mobile-menu">
+              <ul>
+                <li class="itemHeader">
+                  <a href="./index.html">Home</a>
+                </li>
+                <li class="itemHeader"><a href="./shop.html">Shop</a></li>
+                <li>
+                  <a href="#">Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li>
+                      <a href="./shopping-cart.html">Shopping Cart</a>
+                    </li>
+                    <li>
+                      <a href="./checkout.html">Check Out</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="itemHeader active">
+                  <a href="./blog.html">Blog</a>
+                </li>
+                <li class="itemHeader">
+                  <a href="./contact.html">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="header__nav__option">
+              <div class="search">
+                <input placeholder="Enter..." class="inputSearch" />
+                <i class="fa-solid fa-magnifying-glass inputIcon"></i>
+              </div>
+              <a class="search-switch">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+              <a href="./login.html"><i class="fa-solid fa-user"></i></a>
+              <a href="#"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="js-show-cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="canvas__open"><i class="fa fa-bars"></i></div>
+      </div>
+    </header>
+
+    <div class="wrap-header-cart js-panel-cart">
+      <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+          <span class="mtext-103 cl2"> Your Cart </span>
+
+          <div class="iconCart">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <div class="header-cart-content flex-w js-pscroll">
+          <ul class="header-cart-wrapitem w-full">
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  White Shirt Pleat
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  White Shirt Pleat
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  White Shirt Pleat
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  White Shirt Pleat
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  White Shirt Pleat
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+          </ul>
+          <div class="w-full totalCart">
+            <div class="header-cart-total w-full p-tb-40">Total: $75.00</div>
+
+            <div class="header-cart-buttons flex-w w-full">
+              <a href="./shopping-cart.html" class="site-btn"> View Cart </a>
+
+              <a href="./checkout.html" class="site-btn"> Check Out </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="blog-hero spad">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-9 text-center">
+            <div class="blog__hero__text">
+              <h2>
+                ĐỂ CHO THẾ GIỚI BIẾT BẠN LÀ AI
+              </h2>
+              <ul>
+                <li>By Deercreative</li>
+                <li>February 21, 2019</li>
+                <li>8 Comments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-details spad">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-12">
+            <div class="blog__details__pic">
+              <img src="img/blog/details/BanSeLa.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="blog__details__content">
+              <div class="blog__details__share">
+                <span>share</span>
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#" class="twitter"
+                      ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="youtube"
+                      ><i class="fa-brands fa-youtube"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="#" class="linkedin"
+                      ><i class="fa-brands fa-linkedin-in"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="blog__details__text">
+                <p>
+                  Được xem là người khai sinh ra bộ môn khoa học về thành công, 
+                  Napoleon Hill đã dành gần như trọn đời để phân tích, nghiên cứu,
+                   xây dựng và giảng dạy những triết lý, nguyên tắc cốt lõi, nền 
+                   tảng nhất có thể đưa một người đến cái đích thành công. Trải qua 
+                   khảo nghiệm thời gian gần một thế kỷ, những triết lý thành công 
+                   của Hill đã chứng tỏ giá trị bền vững và đúng đắn qua nhiều biến đổi xã hội.
+                  “Để thế giới biết bạn là ai” là một công trình tầm cỡ về khoa học 
+                  thành công, không phải những thành công bề nổi, hào nhoáng của bạc tiền, 
+                  mà kiểu thành công vững bền, đến từ nền tảng con người bên trong bạn.
+                </p>
+                <p>
+                  Đây là một cuốn sách về nghệ thuật bán hàng, nhưng nó lại
+                   không dạy bạn cách để bán một món hàng cụ thể. Có một sự thật 
+                   là tất cả chúng ta đều là người bán hàng, bất kể chúng ta là ai, 
+                   theo nghề nghiệp gì, hoạt động trong lĩnh vực nào, bất kể đâu là đam
+                    mê mà ta đang theo đuổi. Bạn không nhất thiết phải bán một món hàng 
+                    cụ thể mới là người bán hàng, mỗi lúc bạn chuyện trò cùng ai đó, chia
+                     sẻ một ý kiến, giải thích một ý tưởng, chính là bạn đang bán ra món 
+                     sở hữu giá trị nhất của bạn chính bạn.  Mọi dịch vụ, trí tuệ, ý tưởng, 
+                     kỹ năng của bạn đều là một “món hàng” mà bạn bán ra cho đời, để thu về 
+                     sự thịnh vượng cả về vật chất lẫn tinh thần. Hơn ba mươi chương sách là 
+                     những phân tích, dẫn chứng và những đúc kết sâu sắc về việc bạn làm thế nào
+                      nổi bật lên được giá trị bản thân, làm thế nào thể hiện được trọn vẹn khả năng,
+                       tiềm năng của mình, và làm thế nào để được công nhận đúng với giá trị thật của bạn. 
+                       Bạn có thể là một tài năng xuất chúng, có thể là người dồi dào những ý tưởng tuyệt 
+                       vời, bạn có thể có những kỹ năng xuất sắc, nhưng nếu bạn không biết cách thể hiện
+                        và phát huy chúng, không biết cách quảng bá chính mình, bạn vẫn sẽ mãi là con số
+                         không giữa đám đông những người kém cỏi hơn mình.
+                </p>
+              </div>
+              <div class="blog__details__quote">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                  “Patience, persistence
+                  and perspiration
+                  make an unbeatable
+                  combination for
+                  success.”
+                </p>
+                <h6>_ Napoleon Hill _</h6>
+              </div>
+              <div class="blog__details__text">
+                <p>
+                  Giống như mọi cuốn sách khác của Napoleon Hill, ta không bắt gặp ở đây 
+                  những mánh khóe hay thủ đoạn thu phục nhân tâm, những chiêu trò để xây
+                   dựng thứ thành công tạm bợ, ngắn ngủi. Điều Napoleon Hill hướng đến vẫn 
+                   là giá trị cốt lõi, là con người bên trong chúng ta 
+                  và dựa trên nền tảng đó mà xây dựng con đường thành công bền vững.
+                </p>
+                <p>
+                  Vẫn với ngôn ngữ mượt mà và giọng văn duyên dáng, ở cuốn sách này, Hill 
+                  sẽ để tâm trí bạn có sự kết nối tạm thời với những con người đã sống một 
+                  cuộc đời trọn vẹn hạnh phúc, được cấp cho mọi thứ họ muốn trong đời mà không tổn hại đến lợi ích của bất kỳ ai.
+                </p>
+                <P>
+                  Cuốn sách gồm bốn phần. Phần một miêu tả triết lý đàm phán thông qua hoạt động 
+                  của những người đã quảng bá bản thân thành công mà không gây ra va chạm trong các
+                  mối quan hệ với người khác. Trọn cả phần hai được dành để nói về triết lý của việc 
+                  quảng bá dịch vụ cá nhân cho mọi tính cách, đặc biệt nhấn mạnh vào những câu chuyện 
+                  có thật, mang giá trị tuyệt vời đối với những người trẻ mới bắt đầu sự nghiệp. Phần ba 
+                  chủ yếu phân tích toàn diện về những phương pháp mà một người giàu có bậc nhất nước Mỹ,
+                   Henry Ford, đã dùng để quảng bá bản thân, để từ một người nghèo khó trở thành một người 
+                   nổi tiếng và giàu có. Những câu chuyện có thật được kể trong bốn phần của cuốn sách này 
+                   không chỉ đơn thuần là được viết lại. Đây là những câu chuyện về những cuộc đời đã được 
+                   sống bởi những người đàn ông, phụ nữ góp phần đưa nước Mỹ trở thành một đất nước công 
+                   nghiệp vĩ đại nhất thế giới. Cuốn sách là chứa đựng những nguyên tắc vượt thời gian này 
+                   là dành cho tất cả chúng ta, những ai không muốn bị hòa tan, chìm lẫn giữa thế giới rộng l
+                   ớn, nhiều biến động này. Sách được chuyển ngữ bởi Châu Khánh Tâm, Lê Thị Hồng Thắm. Nhà xuất
+                    bản Tổng hợp, First News ấn hành.
+                </P>
+              </div>
+              <div class="blog__details__option">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="blog__details__author">
+                      <div class="blog__details__author__pic">
+                        <img src="img/blog/details/blog-author.jpg" alt="" />
+                      </div>
+                      <div class="blog__details__author__text">
+                        <h5>Aiden Blair</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="blog__details__tags">
+                      <a href="#">#Fashion</a>
+                      <a href="#">#Trending</a>
+                      <a href="#">#2020</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blog__details__btns">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a href="./blog_NhungNguoiDepSayNgu.html" class="blog__details__btns__item">
+                      <p><span class="arrow_left"></span> Previous Pod</p>
+                      <h5>
+                        Những Người Đẹp Say Ngủ
+                      </h5>
+                    </a>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <a
+                      href="./blog_DacNhanTam.html"
+                      class="blog__details__btns__item blog__details__btns__item--next"
+                    >
+                      <p>Next Pod <span class="arrow_right"></span></p>
+                      <h5>ĐẮC NHÂN TÂM</h5>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="blog__details__comments">
+                <h3 class="mb-5">6 Comments</h3>
+                <ul class="comment-list">
+                  <li class="comment">
+                    <div class="vcard bio">
+                      <img
+                        src="img/product/product-1.jpg"
+                        alt="Image placeholder"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <h3>John Doe</h3>
+                      <div class="meta">June 27, 2018 at 2:21pm</div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Pariatur quidem laborum necessitatibus, ipsam
+                        impedit vitae autem, eum officia, fugiat saepe enim
+                        sapiente iste iure! Quam voluptas earum impedit
+                        necessitatibus, nihil?
+                      </p>
+                      <p><a href="#" class="reply">Reply</a></p>
+                    </div>
+                  </li>
+
+                  <li class="comment">
+                    <div class="vcard bio">
+                      <img
+                        src="img/product/product-1.jpg"
+                        alt="Image placeholder"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <h3>John Doe</h3>
+                      <div class="meta">June 27, 2018 at 2:21pm</div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Pariatur quidem laborum necessitatibus, ipsam
+                        impedit vitae autem, eum officia, fugiat saepe enim
+                        sapiente iste iure! Quam voluptas earum impedit
+                        necessitatibus, nihil?
+                      </p>
+                      <p><a href="#" class="reply">Reply</a></p>
+                    </div>
+
+                    <ul class="children">
+                      <li class="comment">
+                        <div class="vcard bio">
+                          <img
+                            src="img/product/product-1.jpg"
+                            alt="Image placeholder"
+                          />
+                        </div>
+                        <div class="comment-body">
+                          <h3>John Doe</h3>
+                          <div class="meta">June 27, 2018 at 2:21pm</div>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Pariatur quidem laborum necessitatibus, ipsam
+                            impedit vitae autem, eum officia, fugiat saepe enim
+                            sapiente iste iure! Quam voluptas earum impedit
+                            necessitatibus, nihil?
+                          </p>
+                          <p><a href="#" class="reply">Reply</a></p>
+                        </div>
+
+                        <ul class="children">
+                          <li class="comment">
+                            <div class="vcard bio">
+                              <img
+                                src="img/product/product-1.jpg"
+                                alt="Image placeholder"
+                              />
+                            </div>
+                            <div class="comment-body">
+                              <h3>John Doe</h3>
+                              <div class="meta">June 27, 2018 at 2:21pm</div>
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Pariatur quidem laborum
+                                necessitatibus, ipsam impedit vitae autem, eum
+                                officia, fugiat saepe enim sapiente iste iure!
+                                Quam voluptas earum impedit necessitatibus,
+                                nihil?
+                              </p>
+                              <p><a href="#" class="reply">Reply</a></p>
+                            </div>
+
+                            <ul class="children">
+                              <li class="comment">
+                                <div class="vcard bio">
+                                  <img
+                                    src="img/product/product-1.jpg"
+                                    alt="Image placeholder"
+                                  />
+                                </div>
+                                <div class="comment-body">
+                                  <h3>John Doe</h3>
+                                  <div class="meta">
+                                    June 27, 2018 at 2:21pm
+                                  </div>
+                                  <p>
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Pariatur quidem laborum
+                                    necessitatibus, ipsam impedit vitae autem,
+                                    eum officia, fugiat saepe enim sapiente iste
+                                    iure! Quam voluptas earum impedit
+                                    necessitatibus, nihil?
+                                  </p>
+                                  <p><a href="#" class="reply">Reply</a></p>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="comment">
+                    <div class="vcard bio">
+                      <img
+                        src="img/product/product-1.jpg"
+                        alt="Image placeholder"
+                      />
+                    </div>
+                    <div class="comment-body">
+                      <h3>John Doe</h3>
+                      <div class="meta">June 27, 2018 at 2:21pm</div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Pariatur quidem laborum necessitatibus, ipsam
+                        impedit vitae autem, eum officia, fugiat saepe enim
+                        sapiente iste iure! Quam voluptas earum impedit
+                        necessitatibus, nihil?
+                      </p>
+                      <p><a href="#" class="reply">Reply</a></p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="blog__details__form">
+                  <h4>Leave A Comment</h4>
+                  <form action="#">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Name" />
+                      </div>
+                      <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Email" />
+                      </div>
+                      <div class="col-lg-4 col-md-4">
+                        <input type="text" placeholder="Phone" />
+                      </div>
+                      <div class="col-lg-12 text-center">
+                        <textarea placeholder="Comment"></textarea>
+                        <button type="submit" class="site-btn">
+                          Post Comment
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer__about">
+              <div class="footer__logo">
+                <a href="#"><img src="img/footer-logo.png" alt="" /></a>
+              </div>
+              <p>
+                The customer is at the heart of our unique business model, which
+                includes design.
+              </p>
+              <a href="#"><img src="img/payment.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h6>Shopping</h6>
+              <ul>
+                <li><a href="#">Book</a></li>
+                <li><a href="#">Trending </a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h6>Shopping</h6>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Payment Methods</a></li>
+                <li><a href="#">Delivary</a></li>
+                <li><a href="#">Return & Exchanges</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+            <div class="footer__widget">
+              <h6>NewLetter</h6>
+              <div class="footer__newslatter">
+                <p>
+                  Be the first to know about new arrivals, look books, sales &
+                  promos!
+                </p>
+                <form action="#">
+                  <input type="text" placeholder="Your email" />
+                  <button type="submit">
+                    <span class="lnr lnr-chevron-right"></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer__copyright__text">
+              <p>
+                Website Version 1.0.1
+                 <script>
+                   document.write(new Date().getFullYear());
+                 </script>
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scrool-top">
+      <img src="img/scroll-img-min.png" alt="" />
+    </a>
+
+    <!-- JS  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
