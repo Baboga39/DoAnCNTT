@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Male_Fashion Template" />
+    <meta name="keywords" content="Male_Fashion, unica, creative, html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MY SHOP</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWNSOME  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- linearicons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
+
+    <!-- LINK BOOTSTRAP  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3">
+            <div class="header__logo">
+              <a href="./index.html">
+                <img src="./img/logo.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="navbar col-lg-6 col-md-6">
+            <nav class="header__menu mobile-menu">
+              <ul>
+                <li class="itemHeader">
+                  <a href="./index.html">Home</a>
+                </li>
+                <li class="itemHeader active">
+                  <a href="./shop.html">Shop</a>
+                </li>
+                <li>
+                  <a href="#">Pages</a>
+                  <ul class="dropdown">
+                    <li><a href="./about.html">About Us</a></li>
+                    <li>
+                      <a href="./shopping-cart.html">Shopping Cart</a>
+                    </li>
+                    <li>
+                      <a href="./checkout.html">Check Out</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="itemHeader"><a href="./blog.html">Blog</a></li>
+                <li class="itemHeader">
+                  <a href="./contact.html">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="header__nav__option">
+              <div class="search">
+                <input placeholder="Enter..." class="inputSearch" />
+                <i class="fa-solid fa-magnifying-glass inputIcon"></i>
+              </div>
+              <a class="search-switch">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+              <a href="./login.html"><i class="fa-solid fa-user"></i></a>
+              <a href="#"><i class="fa-solid fa-heart"></i></a>
+              <a href="#" class="js-show-cart"
+                ><i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="canvas__open"><i class="fa fa-bars"></i></div>
+      </div>
+    </header>
+
+    <div class="wrap-header-cart js-panel-cart">
+      <div class="header-cart flex-col-l p-l-65 p-r-25">
+        <div class="header-cart-title flex-w flex-sb-m p-b-8">
+          <span class="mtext-103 cl2"> Your Cart </span>
+
+          <div class="iconCart">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <div class="header-cart-content flex-w js-pscroll">
+          <ul class="header-cart-wrapitem w-full">
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  Book
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  Book
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  Book
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  Book
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+            <li class="header-cart-item flex-w flex-t m-b-12">
+              <div class="header-cart-item-img">
+                <img src="img/product/product-1.jpg" alt="IMG" />
+              </div>
+
+              <div class="header-cart-item-txt p-t-8">
+                <a
+                  href="#"
+                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
+                >
+                  Book
+                </a>
+
+                <span class="header-cart-item-info"> 1 x $19.00 </span>
+              </div>
+            </li>
+          </ul>
+          <div class="w-full totalCart">
+            <div class="header-cart-total w-full p-tb-40">Total: $75.00</div>
+
+            <div class="header-cart-buttons flex-w w-full">
+              <a href="./shopping-cart.html" class="site-btn"> View Cart </a>
+
+              <a href="./checkout.html" class="site-btn"> Check Out </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-option">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="breadcrumb__text">
+              <h4>Shop</h4>
+              <div class="breadcrumb__links">
+                <a href="./index.html">Home</a>
+                <span>Shop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shop Section Begin -->
+    <section class="shop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="shop__sidebar">
+              <div class="shop__sidebar__search">
+                <form action="#">
+                  <input type="text" placeholder="Search..." />
+                  <button type="submit">
+                    <span class="icon_search"></span>
+                  </button>
+                </form>
+              </div>
+              <div class="shop__sidebar__accordion">
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseOne"
+                        >Categories</a
+                      >
+                    </div>
+                    <div
+                      id="collapseOne"
+                      class="collapse show"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="shop__sidebar__categories">
+                          <ul class="nice-scroll">
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                            <li><a href="#">Book (20)</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseTwo"
+                        >Author</a
+                      >
+                    </div>
+                    <div
+                      id="collapseTwo"
+                      class="collapse show"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="shop__sidebar__brand">
+                          <ul>
+                            <li><a href="#">Author</a></li>
+                            <li><a href="#">Author</a></li>
+                            <li><a href="#">Author</a></li>
+                            <li><a href="#">Author</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseThree"
+                        >Filter Price</a
+                      >
+                    </div>
+                    <div
+                      id="collapseThree"
+                      class="collapse show"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="shop__sidebar__price">
+                          <ul>
+                            <li><a href="#">$0.00 - $50.00</a></li>
+                            <li><a href="#">$50.00 - $100.00</a></li>
+                            <li><a href="#">$100.00 - $150.00</a></li>
+                            <li><a href="#">$150.00 - $200.00</a></li>
+                            <li><a href="#">$200.00 - $250.00</a></li>
+                            <li><a href="#">250.00+</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                  </div>
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseSix"
+                        >Tags</a
+                      >
+                    </div>
+                    <div
+                      id="collapseSix"
+                      class="collapse show"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="shop__sidebar__tags">
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                          <a href="#">Book</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="shop__product__option">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="shop__product__option__left">
+                    <p>Showing 1–12 of 126 results</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="shop__product__option__right">
+                    <p>Sort by Price:</p>
+                    <select
+                      class="nice-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected><span>Low To High</span></option>
+                      <option value="1"><span>$0 - $55</span></option>
+                      <option value="2"><span>$55 - $100</span></option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-1.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-2.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-3.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-4.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-5.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-6.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-7.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-8.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-9.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-10.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-11.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-product">
+                  <a href="/shopping_detail.html">
+                    <img
+                      class="img-fluid"
+                      src="img/product/product-12.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div class="product-details">
+                    <h6>Book</h6>
+                    <div class="price">
+                      <h6>$150.00</h6>
+                      <h6 class="l-through">$210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-cart"></span>
+                        <p class="hover-text">add to bag</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-heart"></span>
+                        <p class="hover-text">Wishlist</p>
+                      </a>
+                      <a href="" class="social-info">
+                        <span class="lnr lnr-sync"></span>
+                        <p class="hover-text">compare</p>
+                      </a>
+                      <a href="/shopping_detail.html" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="product__pagination">
+                  <a class="active" href="#">1</a>
+                  <a href="#">2</a>
+                  <a href="#">3</a>
+                  <span>...</span>
+                  <a href="#">21</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shop Section End -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer__about">
+              <div class="footer__logo">
+                <a href="#"><img src="img/footer-logo.png" alt="" /></a>
+              </div>
+              <p>
+                The customer is at the heart of our unique business model, which
+                includes design.
+              </p>
+              <a href="#"><img src="img/payment.png" alt="" /></a>
+            </div>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h6>Shopping</h6>
+              <ul>
+                 <li><a href="#">Book</a></li>
+                <li><a href="#">Trending </a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="footer__widget">
+              <h6>Shopping</h6>
+              <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Payment Methods</a></li>
+                <li><a href="#">Delivary</a></li>
+                <li><a href="#">Return & Exchanges</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+            <div class="footer__widget">
+              <h6>NewLetter</h6>
+              <div class="footer__newslatter">
+                <p>
+                  Be the first to know about new arrivals, look books, sales &
+                  promos!
+                </p>
+                <form action="#">
+                  <input type="text" placeholder="Your email" />
+                  <button type="submit">
+                    <span class="lnr lnr-chevron-right"></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="footer__copyright__text">
+                <p>
+                Website Version 1.0.1
+                 <script>
+                   document.write(new Date().getFullYear());
+                 </script>
+               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scrool-top">
+      <img src="img/scroll-img-min.png" alt="" />
+    </a>
+
+    <!-- JS  -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
