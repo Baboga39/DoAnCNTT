@@ -19,3 +19,9 @@ https://spiderum.com/bai-dang/Review-sach-Buoc-ra-the-gioi-Cam-nang-du-hoc-va-sa
 
 // Ngàn mặt trời rực rỡ
 https://spiderum.com/bai-dang/Book-Review-Ngan-Mat-troi-Ruc-ro-~-Khaled-Hosseini-EWx0zLd7n9uS
+
+//Database
+ALTER TABLE CartList
+ADD FOREIGN KEY (itemID) REFERENCES CartItem(CId);
+ALTER TABLE CartList
+ADD FOREIGN KEY (UID) REFERENCES [User](UID);
