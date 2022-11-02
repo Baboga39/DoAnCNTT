@@ -30,7 +30,7 @@ public class CategoryControl extends HttpServlet {
 		List<Book> list = dao.getBookByCID(cateID);
 		List<Category> listC = dao.getAllCategory();
 		List<Author> listA = dao.getAllAuthor();
-		
+	
 		request.setAttribute("listP", list);
 		request.setAttribute("listC", listC);
 		request.setAttribute("listA", listA);

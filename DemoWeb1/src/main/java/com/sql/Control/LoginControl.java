@@ -33,6 +33,7 @@ public class LoginControl extends HttpServlet {
 		String passsword = request.getParameter("pass");
 		DAO dao = new DAO();
 		User a = dao.login(username, passsword);
+		User b = dao.login(username, passsword);
 		if(a == null)
 		{
 			request.setAttribute("mess", "Wrong User or Password");
@@ -41,6 +42,7 @@ public class LoginControl extends HttpServlet {
 		else {
 			HttpSession session = request.getSession();
 			session.setAttribute("acc", a);
+			session.setAttribute("bcc", b);
 			response.sendRedirect("shop");// Khong can truyen du lieu
 		}
 	}

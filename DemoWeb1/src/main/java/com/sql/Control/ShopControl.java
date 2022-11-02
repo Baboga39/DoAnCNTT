@@ -26,11 +26,6 @@ public class ShopControl extends HttpServlet {
 		List<Book> list = dao.getAllBook();
 		List<Category> listC = dao.getAllCategory();
 		List<Author> listA = dao.getAllAuthor();
-		for(Author A : listA)
-		{
-			System.out.println(A.getAuName());
-		}
-			
 		request.setAttribute("listP", list);
 		request.setAttribute("listC", listC);
 		request.setAttribute("listA", listA);

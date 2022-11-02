@@ -1,22 +1,17 @@
 package com.sql.Model;
 
-import java.util.List;
-
-import com.sql.Dao.DAO;
-
 public class Author {
-	private int AuID;
+	private int AuId;
 	private String AuName;
-	public Author(int auID, String auName) {
-		super();
-		AuID = auID;
+	public Author(int auId, String auName) {
+		AuId = auId;
 		AuName = auName;
 	}
-	public int getAuID() {
-		return AuID;
+	public int getAuId() {
+		return AuId;
 	}
-	public void setAuID(int auID) {
-		AuID = auID;
+	public void setAuId(int auId) {
+		AuId = auId;
 	}
 	public String getAuName() {
 		return AuName;
@@ -26,7 +21,7 @@ public class Author {
 	}
 	@Override
 	public String toString() {
-		return "Author [AuID=" + AuID + ", AuName=" + AuName + "]";
+		return "Author [AuId=" + AuId + ", AuName=" + AuName + "]";
 	}
-
+	
 }
