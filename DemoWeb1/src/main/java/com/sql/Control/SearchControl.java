@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
+import com.sql.Model.Author;
 import com.sql.Model.Book;
+import com.sql.Model.Category;
 
 /**
  * Servlet implementation class SearchControl
@@ -23,10 +25,14 @@ public class SearchControl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String txtSeach = request.getParameter("txt");// Bien o Input
 		DAO dao = new DAO();
+		List<Category> listC = dao.getAllCategory();
+		List<Author> listA = dao.getAllAuthor();
 		List<Book> list = dao.searchBookByName(txtSeach);
 		
 		
 		request.setAttribute("listP", list);
+		request.setAttribute("listC", listC);
+		request.setAttribute("listA", listA);
 		request.getRequestDispatcher("shop.jsp").forward(request, response);
 	}
 

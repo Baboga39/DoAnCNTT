@@ -1,4 +1,4 @@
-package com.sql.Dao;
+	package com.sql.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +10,7 @@ import com.sql.Connection.SqlServerConnection;
 import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
+import com.sql.Model.User;
 
 
 
@@ -172,5 +173,63 @@ public class DAO {
 
 		return list;
 	}
-	
+	//Login
+	public User login(String user, String pass)
+	{
+		String query ="SELECT * FROM [User] WHERE UTK = ? AND UPass =?";
+			
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, user);
+			ps.setString(2, pass);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				return new User( rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)
+						, rs.getString(8), rs.getString(9),rs.getString(10));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+	//Check exits
+	public User checkUserExits(String user)
+	{
+		String query ="SELECT * FROM [User] WHERE UTK = ? ";
+			
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, user);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				return new User( rs.getInt(1), rs.getString(2), rs.getString(3),
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)
+						, rs.getString(8), rs.getString(9),rs.getString(10));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+	// Sign Up
+	public void SignUp(String name, String phone ,  String email,  String user,
+			 String pass, String username)
+	{
+		String query ="INSERT INTO [User] VALUES(?,?,0,'?,?,?,'0','1','0')";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			ps.setString(3, email);
+			ps.setString(4, pass);
+			ps.setString(5, username);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 }
