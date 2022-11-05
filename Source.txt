@@ -2,6 +2,8 @@
 https://muagitot.com/review-sach/review-nghi-giau-lam-giau-n4030.html
 // 2.Gieo suy nghĩ gặt thành công
 https://nhungcuonsachhay.com/gieo-suy-nghi-gat-thanh-cong-napoleon-hill/
+// 3.Oxf IDIOMS Dict Learners of Eng 2e
+https://www.amazon.com/Oxford-Idioms-Dictionary-Dilys-Parkinson/dp/0194317234
 // 4.Oxf Learner's Thesaurus Pk
 https://www.fahasa.com/oxford-learner-s-thesaurus-pack-book-and-cd-rom.html
 // 5.Việt Nam Danh Tác - Ngày Mới
@@ -9,26 +11,28 @@ https://sachnhanam.com/reviews-bao/viet-nam-danh-tac-co-them-tac-pham-moi/
 // 6.Hà Nội Băm Sáu Phố Phường (Tái Bản 2022)
 https://diemsach.info/tac-gia-tac-pham/ha-noi-bam-sau-pho-phuong-tac-gia-thach-lam/
 // 7.Leonardo Da Vinci Walter Isaacson (Tái Bản)
-https://motreview.com.vn/sach-leonardo-da-vinci/
+https://triethocduongpho.net/2020/05/08/review-leonardo-da-vinci-walter-isaacson-con-nguoi-hay-than-thanh/
 // 8.Gió Lạnh Đầu Mùa
 https://revisach.com/gio-lanh-dau-mua/
 // 9.Cáo Chống Lại Mùa Đông
 https://nhasachphuongnam.com/vi/fox-versus-winter-cao-chong-lai-mua-dong.html
-// 10.Đắc nhân tâm
+// 10.Cáo thi nhảy
+https://sanhobooks.com/san-pham/cao-thi-nhay/
+// 11.Đắc nhân tâm
 https://spiderum.com/bai-dang/BAN-SE-LA-NHAN-VAT-PHAN-DIEN-TRONG-CAU-CHUYEN-CUA-NGUOI-KHAC-gsWFy0Vh26ns
-// 11.Tư duy nhanh chậm
+// 12.Tư duy nhanh chậm
 https://spiderum.com/bai-dang/Sach-tinh-gon-Tu-duy-nhanh-va-cham-ct1
-// 12.Nghệ thuật tập trung 
+// 13.Nghệ thuật tập trung 
 https://spiderum.com/bai-dang/REVIEW-SACH-NGHE-THUAT-TAP-TRUNG-Tap-trung-la-chia-khoa-dan-den-canh-cua-thanh-cong-YNzSAQYVegxi
-// 13.Để cho thế giới biết bạn là ai
+// 14.Để cho thế giới biết bạn là ai
 https://tiki.vn/de-the-gioi-biet-ban-la-ai-p1676079.html
-// 13.Momo
+// 15.Momo
 https://spiderum.com/bai-dang/Review-Sach-Momo-dsj8Pb1ZECjR
-// 14.The Secret
+// 16.The Secret
 https://spiderum.com/bai-dang/Review-sach-The-Secret-lieu-ma-tuy-cho-tinh-than-kFNY3leArCoR
-// 15.Bước ra thế giới: Cẩm nang du học và săn học bổng
+// 17.Bước ra thế giới: Cẩm nang du học và săn học bổng
 https://spiderum.com/bai-dang/Review-sach-Buoc-ra-the-gioi-Cam-nang-du-hoc-va-san-hoc-bong-Cuon-sach-hiem-hoi-ve-du-hoc-bac-Thac-si-Tien-si-QpHlRnYeSoN7
-// 16.Ngàn mặt trời rực rỡ
+// 18.Ngàn mặt trời rực rỡ
 https://spiderum.com/bai-dang/Book-Review-Ngan-Mat-troi-Ruc-ro-~-Khaled-Hosseini-EWx0zLd7n9uS
 
 //Database
