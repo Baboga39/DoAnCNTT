@@ -25,10 +25,25 @@ public class ShopControl extends HttpServlet {
 		DAO dao = new DAO();
 		List<Book> list = dao.getAllBook();
 		List<Category> listC = dao.getAllCategory();
-		List<Author> listA = dao.getAllAuthor();
-		request.setAttribute("listP", list);
+		List<Author> listAuthor = dao.getAllAuthor();
+		String indexPage = request.getParameter("index");
+		if(indexPage==null)
+		{
+			indexPage="1";
+		}
+		int index =Integer.parseInt(indexPage);
+		List<Book> listPa = dao.PagingBook(index);
+
+		int count  = dao.getTotalBook();
+		int endPage = count/6;
+		if(count  % 6!=0 ) {
+			endPage++;
+		}
+		request.setAttribute("tag", index);
+		request.setAttribute("EndPage",endPage);
+		request.setAttribute("listP", listPa);
 		request.setAttribute("listC", listC);
-		request.setAttribute("listA", listA);
+	
 		request.getRequestDispatcher("shop.jsp").forward(request, response);
 	}
 

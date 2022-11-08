@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/Email/SendMail.java=UTF-8
+encoding//src/main/java/com/sql/Control/SendMailControl.java=UTF-8
 encoding//src/main/java/com/sql/Control/SignUpControl.java=UTF-8
 encoding//src/main/java/com/sql/Dao/DAO.java=UTF-8
 encoding//src/main/webapp/blog_details.jsp=UTF-8

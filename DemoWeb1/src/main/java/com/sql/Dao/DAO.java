@@ -1,4 +1,4 @@
-	package com.sql.Dao;
+package com.sql.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,29 +12,22 @@ import com.sql.Model.Book;
 import com.sql.Model.Category;
 import com.sql.Model.User;
 
-
-
 public class DAO {
 	Connection conn = null; // Kết nới Sql
 	PreparedStatement ps = null; // Query qua SQL
 	ResultSet rs = null; // Kết quả trả về
 	// Show all Product
+
 	public List<Book> getAllBook() {
 		List<Book> list = new ArrayList<>();
-		
+
 		String query = "SELECT * FROM Book";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-			list.add(
-					new Book(rs.getInt(1),
-							 rs.getString(2),
-							 rs.getInt(3),
-							 rs.getInt(4),
-							 rs.getString(7))
-					);
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -42,22 +35,18 @@ public class DAO {
 
 		return list;
 	}
-	
-	//Show Categoory
+
+	// Show Categoory
 	public List<Category> getAllCategory() {
 		List<Category> list = new ArrayList<>();
-		
+
 		String query = "SELECT * FROM Category";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-			list.add(
-					new Category(rs.getInt(1),
-							 rs.getString(2)
-							 )
-					);
+				list.add(new Category(rs.getInt(1), rs.getString(2)));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -65,22 +54,18 @@ public class DAO {
 
 		return list;
 	}
-	
+
 	// Show Author
 	public List<Author> getAllAuthor() {
 		List<Author> list = new ArrayList<>();
-		
+
 		String query = "SELECT * FROM Author";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-			list.add(
-					new Author(rs.getInt(1),
-							 rs.getString(2)
-							 )
-					);
+				list.add(new Author(rs.getInt(1), rs.getString(2)));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -88,21 +73,23 @@ public class DAO {
 
 		return list;
 	}
+
 	public static void main(String[] args) {
 		try {
 			DAO dao = new DAO();
 			List<Author> list = dao.getAllAuthor();
-			for(Author o : list) {
+			for (Author o : list) {
 				System.out.println(o.getAuName());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
-	// Get Book By CID 
-	public List<Book> getBookByCID( String cid) {
+
+	// Get Book By CID
+	public List<Book> getBookByCID(String cid) {
 		List<Book> list = new ArrayList<>();
-		
+
 		String query = "SELECT * FROM Book WHERE BCate = ?";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
@@ -110,13 +97,7 @@ public class DAO {
 			ps.setString(1, cid);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-			list.add(
-					new Book(rs.getInt(1),
-							 rs.getString(2),
-							 rs.getInt(3),
-							 rs.getInt(4),
-							 rs.getString(7))
-					);
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -124,9 +105,123 @@ public class DAO {
 
 		return list;
 	}
-	
+
+	// Get book 10000-50000
+	public List<Book> getBookPrice1to5() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice > 10000 and BPrice <50000 ";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Getbook 50000-70000
+	public List<Book> getBookPrice5to7() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice > 50000 and BPrice <70000";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Getbook70000-100000
+	public List<Book> getBookPrice7to10() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice > 70000 and BPrice <100000 ";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Getbook 100000-200000
+	public List<Book> getBookPrice10to20() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice > 100000 and BPrice <200000 ";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Getbook 200000-300000
+	public List<Book> getBookPrice20to30() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice > 200000 and BPrice <300000 ";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Getbook 3000000+
+	public List<Book> getBookPrice30to40() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BPrice >300000 ";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
 	// GET Book By Id
-	public Book getBookByBId( String cid) {
+	public Book getBookByBId(String cid) {
 		String query = "SELECT * FROM Book WHERE BId = ?";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
@@ -134,12 +229,7 @@ public class DAO {
 			ps.setString(1, cid);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				return 	new Book(rs.getInt(1),
-							 rs.getString(2),
-							 rs.getInt(3),
-							 rs.getInt(4),
-							 rs.getString(7))
-					;
+				return new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -147,25 +237,19 @@ public class DAO {
 
 		return null;
 	}
-	
-	//Search Book
-	public List<Book> searchBookByName( String txtSearch) {
+
+	// Get Related Book By CID
+	public List<Book> getRelatedBookByCID(String cid) {
 		List<Book> list = new ArrayList<>();
-		
-		String query = "SELECT * FROM Book WHERE BName LIKE ?";
+
+		String query = "SELECT TOP 4 * FROM Book WHERE BCate = ?";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
-			ps.setString(1, "%"+ txtSearch + "%");
+			ps.setString(1, cid);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-			list.add(
-					new Book(rs.getInt(1),
-							 rs.getString(2),
-							 rs.getInt(3),
-							 rs.getInt(4),
-							 rs.getString(7))
-					);
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -173,52 +257,69 @@ public class DAO {
 
 		return list;
 	}
-	//Login
-	public User login(String user, String pass)
-	{
-		String query ="SELECT * FROM [User] WHERE UTK = ? AND UPass =?";
-			
+
+	// Search Book
+	public List<Book> searchBookByName(String txtSearch) {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT * FROM Book WHERE BName LIKE ?";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, "%" + txtSearch + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Login
+	public User login(String user, String pass) {
+		String query = "SELECT * FROM [User] WHERE UTK = ? AND UPass =?";
+
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			ps.setString(1, user);
 			ps.setString(2, pass);
 			rs = ps.executeQuery();
-			while(rs.next()) {
-				return new User( rs.getInt(1), rs.getString(2), rs.getString(3),
-						rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)
-						, rs.getString(8), rs.getString(9),rs.getString(10));
+			while (rs.next()) {
+				return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
-	//Check exits
-	public User checkUserExits(String user)
-	{
-		String query ="SELECT * FROM [User] WHERE UTK = ? ";
-			
+
+	// Check exits
+	public User checkUserExits(String user) {
+		String query = "SELECT * FROM [User] WHERE UTK = ? ";
+
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			ps.setString(1, user);
 			rs = ps.executeQuery();
-			while(rs.next()) {
-				return new User( rs.getInt(1), rs.getString(2), rs.getString(3),
-						rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)
-						, rs.getString(8), rs.getString(9),rs.getString(10));
+			while (rs.next()) {
+				return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 		return null;
 	}
+
 	// Sign Up
-	public void SignUp(String name, String phone ,  String email,  String user,
-			 String pass, String username)
-	{
-		String query ="INSERT INTO [User] VALUES(?,?,0,'?,?,?,'0','1','0')";
+	public void SignUp(String name, String phone, String email, String user, String pass, String username) {
+		String query = "INSERT INTO [User] VALUES(?,?,0,?,?,?,'0','1','0')";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
@@ -232,4 +333,145 @@ public class DAO {
 			// TODO: handle exception
 		}
 	}
+
+	// Get Best Seller
+	public List<Book> BestSeller() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT TOP 4 * FROM Book WHERE BestSeller = 1";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Get New Arrivals
+	public List<Book> getNewArrivals() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT TOP 4 * FROM Book WHERE NewViral = 1";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Get Hot Sales
+	public List<Book> getHotSales() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT TOP 4 * FROM Book WHERE HotSale = 1";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	// Get Popular
+	public List<Book> getPopular() {
+		List<Book> list = new ArrayList<>();
+
+		String query = "SELECT TOP 4 * FROM Book WHERE Popular = 1";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
+
+	public void DeleteBook(String bid) {
+		String query = "DELETE FROM Book WHERE BId =?";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, bid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	// Insert Book Hai
+	public void InsertBook(String name, String image, String price, String PriceSale, int category) {
+		String query = "INSERT [dbo].[Book] ([BName], [BPrice], [BPriceSale],"
+				+ " [AuID], [BCate], [BImage], [BestSeller], [NewViral], [HotSale], "
+				+ "[Popular]) VALUES (?, ?, ?, NULL, ?, ?, 0, 0, 0, 0);";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(5, image);
+			ps.setString(2, price);
+			ps.setString(3, PriceSale);
+			ps.setInt(4, category);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	// Lay Tong so cuon sach Hai
+	public int getTotalBook() {
+		String query = "SELECT COUNT(*) from Book";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+	}
+
+	public List<Book> PagingBook(int index){
+		List<Book> list = new ArrayList<Book>();
+		String query = "SELECT * FROM Book ORDER BY BId OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, (index-1)*6);
+			rs = ps.executeQuery();
+			while(rs.next())
+			{
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), 
+						rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list;
+	}
+
 }

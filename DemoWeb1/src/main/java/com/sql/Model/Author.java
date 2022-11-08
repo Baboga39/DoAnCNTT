@@ -1,17 +1,18 @@
 package com.sql.Model;
 
 public class Author {
-	private int AuId;
+	private int AuID;
 	private String AuName;
-	public Author(int auId, String auName) {
-		AuId = auId;
+	public Author(int auID, String auName) {
+		super();
+		AuID = auID;
 		AuName = auName;
 	}
-	public int getAuId() {
-		return AuId;
+	public int getAuID() {
+		return AuID;
 	}
-	public void setAuId(int auId) {
-		AuId = auId;
+	public void setAuID(int auID) {
+		AuID = auID;
 	}
 	public String getAuName() {
 		return AuName;
@@ -21,7 +22,7 @@ public class Author {
 	}
 	@Override
 	public String toString() {
-		return "Author [AuId=" + AuId + ", AuName=" + AuName + "]";
+		return "Author [AuID=" + AuID + ", AuName=" + AuName + "]";
 	}
-	
+
 }
