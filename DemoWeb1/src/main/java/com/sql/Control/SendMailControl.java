@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sql.Dao.DAO;
+
 import Email.SendMail;
 
 import javax.mail.Authenticator;
@@ -23,6 +25,7 @@ import javax.mail.Message;
 /**
  * Servlet implementation class SendMailControl
  */
+//Hai
 @WebServlet("/SendMailControl")
 public class SendMailControl extends HttpServlet {
 
@@ -36,12 +39,14 @@ public class SendMailControl extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
+		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String name =request.getParameter("Name");
 		String email =request.getParameter("Email");
 		String content = request.getParameter("Messeage");
 		SendMail.sendMailToEmail(email,name,content);
-		
+		DAO dao = new DAO();
+		dao.InsertFeedback(name, email, email, content);
+		response.sendRedirect("contact.jsp");
 	}
 }

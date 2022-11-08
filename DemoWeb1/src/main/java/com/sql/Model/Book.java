@@ -1,5 +1,5 @@
 package com.sql.Model;
-
+//Hai
 public class Book {
 	private int BId;
 	private String BName;

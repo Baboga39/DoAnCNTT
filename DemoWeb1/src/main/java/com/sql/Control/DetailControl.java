@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
 import com.sql.Model.Book;
-
+//Hai
 /**
  * Servlet implementation class DetailControl
  */

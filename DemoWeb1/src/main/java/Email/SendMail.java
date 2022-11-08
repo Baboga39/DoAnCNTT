@@ -9,7 +9,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+//Hai
 public class SendMail {
 	static final String ACCOUNT = "baboga12@outlook.com";
 	static final String PASSWORD = "Ngochai0612";

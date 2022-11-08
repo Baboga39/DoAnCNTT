@@ -1,5 +1,5 @@
 package com.sql.Model;
-
+//Hai
 public class User {
 	private int UID ;
 	private String UName;

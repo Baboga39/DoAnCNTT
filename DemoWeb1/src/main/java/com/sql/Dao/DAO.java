@@ -17,7 +17,7 @@ public class DAO {
 	PreparedStatement ps = null; // Query qua SQL
 	ResultSet rs = null; // Kết quả trả về
 	// Show all Product
-
+	//Hai
 	public List<Book> getAllBook() {
 		List<Book> list = new ArrayList<>();
 
@@ -35,7 +35,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Show Categoory
 	public List<Category> getAllCategory() {
 		List<Category> list = new ArrayList<>();
@@ -54,7 +54,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Show Author
 	public List<Author> getAllAuthor() {
 		List<Author> list = new ArrayList<>();
@@ -73,7 +73,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	public static void main(String[] args) {
 		try {
 			DAO dao = new DAO();
@@ -85,7 +85,7 @@ public class DAO {
 			// TODO: handle exception
 		}
 	}
-
+	//Hai
 	// Get Book By CID
 	public List<Book> getBookByCID(String cid) {
 		List<Book> list = new ArrayList<>();
@@ -105,7 +105,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Get book 10000-50000
 	public List<Book> getBookPrice1to5() {
 		List<Book> list = new ArrayList<>();
@@ -124,7 +124,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Getbook 50000-70000
 	public List<Book> getBookPrice5to7() {
 		List<Book> list = new ArrayList<>();
@@ -143,7 +143,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Getbook70000-100000
 	public List<Book> getBookPrice7to10() {
 		List<Book> list = new ArrayList<>();
@@ -162,7 +162,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Getbook 100000-200000
 	public List<Book> getBookPrice10to20() {
 		List<Book> list = new ArrayList<>();
@@ -181,7 +181,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Getbook 200000-300000
 	public List<Book> getBookPrice20to30() {
 		List<Book> list = new ArrayList<>();
@@ -200,7 +200,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Getbook 3000000+
 	public List<Book> getBookPrice30to40() {
 		List<Book> list = new ArrayList<>();
@@ -219,7 +219,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// GET Book By Id
 	public Book getBookByBId(String cid) {
 		String query = "SELECT * FROM Book WHERE BId = ?";
@@ -237,7 +237,7 @@ public class DAO {
 
 		return null;
 	}
-
+	//Hai
 	// Get Related Book By CID
 	public List<Book> getRelatedBookByCID(String cid) {
 		List<Book> list = new ArrayList<>();
@@ -257,7 +257,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Search Book
 	public List<Book> searchBookByName(String txtSearch) {
 		List<Book> list = new ArrayList<>();
@@ -277,7 +277,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Login
 	public User login(String user, String pass) {
 		String query = "SELECT * FROM [User] WHERE UTK = ? AND UPass =?";
@@ -297,7 +297,7 @@ public class DAO {
 		}
 		return null;
 	}
-
+	//Hai
 	// Check exits
 	public User checkUserExits(String user) {
 		String query = "SELECT * FROM [User] WHERE UTK = ? ";
@@ -316,7 +316,7 @@ public class DAO {
 		}
 		return null;
 	}
-
+	//Hai
 	// Sign Up
 	public void SignUp(String name, String phone, String email, String user, String pass, String username) {
 		String query = "INSERT INTO [User] VALUES(?,?,0,?,?,?,'0','1','0')";
@@ -333,7 +333,7 @@ public class DAO {
 			// TODO: handle exception
 		}
 	}
-
+	//Hai
 	// Get Best Seller
 	public List<Book> BestSeller() {
 		List<Book> list = new ArrayList<>();
@@ -352,7 +352,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Get New Arrivals
 	public List<Book> getNewArrivals() {
 		List<Book> list = new ArrayList<>();
@@ -371,7 +371,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Get Hot Sales
 	public List<Book> getHotSales() {
 		List<Book> list = new ArrayList<>();
@@ -390,7 +390,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	// Get Popular
 	public List<Book> getPopular() {
 		List<Book> list = new ArrayList<>();
@@ -409,7 +409,7 @@ public class DAO {
 
 		return list;
 	}
-
+	//Hai
 	public void DeleteBook(String bid) {
 		String query = "DELETE FROM Book WHERE BId =?";
 		try {
@@ -454,7 +454,7 @@ public class DAO {
 		}
 		return 0;
 	}
-
+	//Hai
 	public List<Book> PagingBook(int index){
 		List<Book> list = new ArrayList<Book>();
 		String query = "SELECT * FROM Book ORDER BY BId OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
@@ -473,5 +473,18 @@ public class DAO {
 		}
 		return list;
 	}
-
+	//Hai
+	public void InsertFeedback(String name, String email, String price, String content ) {
+		String query = "INSERT INTO Feedback VALUES (?,?,?)";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, email);
+			ps.setString(2, name);
+			ps.setString(3, content);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 }

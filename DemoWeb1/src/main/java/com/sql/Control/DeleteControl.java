@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
-
+//Hai
 /**
  * Servlet implementation class DeleteControl
  */
@@ -18,7 +18,7 @@ public class DeleteControl extends HttpServlet {
        
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UwTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		String bid = request.getParameter("bid");
 		DAO dao = new DAO();
 		dao.DeleteBook(bid);

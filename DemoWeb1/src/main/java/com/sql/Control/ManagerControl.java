@@ -15,7 +15,7 @@ import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
 import com.sql.Model.User;
-
+//Hai
 /**
  * Servlet implementation class ManagerControl
  */

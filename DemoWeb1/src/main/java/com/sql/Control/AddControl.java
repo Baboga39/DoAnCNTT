@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
-
+//Hai
 /**
  * Servlet implementation class AddControl
  */

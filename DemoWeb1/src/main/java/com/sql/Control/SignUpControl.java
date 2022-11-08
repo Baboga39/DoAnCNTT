@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
 import com.sql.Model.User;
-
+//Hai
 
 @WebServlet("/signUp")
 public class SignUpControl extends HttpServlet {

@@ -1,5 +1,5 @@
 package com.sql.Model;
-
+//Hai
 public class Category {
 	private int CId;
 	private String CName;

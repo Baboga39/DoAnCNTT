@@ -3,7 +3,7 @@ package com.sql.Connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-
+//Hai
 public class SqlServerConnection {
 	private final String serverName = "LAPTOP-VDUMRGAT\\SQLEXPRESS";
 	private final String dbName = "DemoWeb";
