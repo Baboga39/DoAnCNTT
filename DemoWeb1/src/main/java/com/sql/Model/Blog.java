@@ -13,8 +13,9 @@ public class Blog {
 	private String name;
 	private String author;
 	private String imageEmail;
+	private String authorQuotes;
 	public Blog(int blogID, int bId, String blogImage, String blogCon1, String blogCon2, String blogCon3,
-			String dayCreate, String quotes, String title , String name ,String author ,String imageEmail) {
+			String dayCreate, String quotes, String title , String name ,String author ,String imageEmail,String authorQuotes) {
 		super();
 		this.blogID = blogID;
 		this.bId = bId;
@@ -28,6 +29,7 @@ public class Blog {
 		this.name = name;
 		this.author = author;
 		this.imageEmail = imageEmail;
+		this.authorQuotes = authorQuotes;
 	}
 	public int getBlogID() {
 		return blogID;
@@ -103,12 +105,19 @@ public class Blog {
 	public void setImageEmail(String imageEmail) {
 		this.imageEmail = imageEmail;
 	}
+	public String getAuthorQuotes() {
+		return authorQuotes;
+	}
+	public void setAuthorQuotes(String authorQuotes) {
+		this.authorQuotes = authorQuotes;
+	}
 	@Override
 	public String toString() {
 		return "Blog [blogID=" + blogID + ", bId=" + bId + ", blogImage=" + blogImage + ", blogCon1=" + blogCon1
 				+ ", blogCon2=" + blogCon2 + ", blogCon3=" + blogCon3 + ", dayCreate=" + dayCreate + ", quotes="
 				+ quotes + ", title=" + title + ", name=" + name + ", author=" + author + ", imageEmail=" + imageEmail
-				+ "]";
+				+ ", authorQuotes=" + authorQuotes + "]";
 	}
+	
 	
 }
