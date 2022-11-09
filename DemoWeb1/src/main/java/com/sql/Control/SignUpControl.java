@@ -36,7 +36,8 @@ public class SignUpControl extends HttpServlet {
 			else
 			{
 				request.setAttribute("mess", "Tài khoản tồn tại");
-				response.sendRedirect("login.jsp");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+				
 			}
 		}
 	}

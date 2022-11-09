@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sql.Connection.SqlServerConnection;
-import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
 import com.sql.Model.User;
@@ -53,37 +52,6 @@ public class DAO {
 		}
 
 		return list;
-	}
-	//Hai
-	// Show Author
-	public List<Author> getAllAuthor() {
-		List<Author> list = new ArrayList<>();
-
-		String query = "SELECT * FROM Author";
-		try {
-			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
-			ps = conn.prepareStatement(query);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				list.add(new Author(rs.getInt(1), rs.getString(2)));
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
-		return list;
-	}
-	//Hai
-	public static void main(String[] args) {
-		try {
-			DAO dao = new DAO();
-			List<Author> list = dao.getAllAuthor();
-			for (Author o : list) {
-				System.out.println(o.getAuName());
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
 	}
 	//Hai
 	// Get Book By CID
@@ -487,4 +455,5 @@ public class DAO {
 			// TODO: handle exception
 		}
 	}
+
 }
