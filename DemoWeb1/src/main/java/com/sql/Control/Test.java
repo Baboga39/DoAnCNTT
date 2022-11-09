@@ -3,6 +3,7 @@ package com.sql.Control;
 import java.util.List;
 
 import com.sql.Dao.DAO;
+import com.sql.Model.Blog;
 import com.sql.Model.Book;
 
 public class Test {
@@ -10,11 +11,10 @@ public class Test {
 	public static void main(String[] args) {
 		
 		DAO dao = new DAO();
-		List<Book> list = dao.PagingBook(2);
-		for(Book c : list)
+		List<Blog> list = dao.getAllBlog();
+		for(Blog c : list)
 		{
-		System.out.println(c);
-			
+		System.out.println(c);		
 		}
 	}
 }
