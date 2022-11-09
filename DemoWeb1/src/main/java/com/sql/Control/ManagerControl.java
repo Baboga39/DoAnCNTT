@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
-import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
 import com.sql.Model.User;
@@ -31,10 +30,8 @@ public class ManagerControl extends HttpServlet {
 		int id = a.getUID();
 		DAO dao = new DAO();
 		List<Category> listC = dao.getAllCategory();
-		List<Author> listAu = dao.getAllAuthor();
 		List<Book> list = dao.getAllBook();
 		
-		request.setAttribute("listAu", listAu);
 		request.setAttribute("listMa", list);
 		request.setAttribute("listC", listC);
 		request.getRequestDispatcher("Manager.jsp").forward(request, response);

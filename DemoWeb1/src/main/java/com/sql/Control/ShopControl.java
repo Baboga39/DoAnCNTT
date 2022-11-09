@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sql.Dao.DAO;
-import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
 
@@ -25,7 +24,6 @@ public class ShopControl extends HttpServlet {
 		DAO dao = new DAO();
 		List<Book> list = dao.getAllBook();
 		List<Category> listC = dao.getAllCategory();
-		List<Author> listAuthor = dao.getAllAuthor();
 		String indexPage = request.getParameter("index");
 		if(indexPage==null)
 		{
