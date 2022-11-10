@@ -1,5 +1,6 @@
-package com.sql.Control;
+package com.sql.Control.Shop;
 
+//Hai
 import java.io.IOException;
 import java.util.List;
 
@@ -12,36 +13,29 @@ import javax.servlet.http.HttpServletResponse;
 import com.sql.Dao.DAO;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
-//Hai
+
 /**
- * Servlet implementation class PagingControl
+ * Servlet implementation class CategoryControl
  */
-@WebServlet("/Paging")
-public class PagingControl extends HttpServlet {
-	
+@WebServlet("/category")
+public class CategoryControl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
 		
+		response.setContentType("text/html;charset=UTF-8");
+		String cateID = request.getParameter("cid"); // Lay id Category
 		DAO dao = new DAO();
-		String indexPage = request.getParameter("index");
-		if(indexPage==null)
-		{
-			indexPage="1";
-		}
-		int index =Integer.parseInt(indexPage);
-		List<Book> list = dao.PagingBook(index);
+		List<Book> list = dao.getBookByCID(cateID);
 		List<Category> listC = dao.getAllCategory();
-		int count  = dao.getTotalBook();
-		int endPage = count/6;
-		if(count  % 6!=0 ) {
-			endPage++;
-		}
-		request.setAttribute("tag", index);
-		request.setAttribute("EndPage",endPage);
+
 		request.setAttribute("listP", list);
 		request.setAttribute("listC", listC);
 		request.getRequestDispatcher("shop.jsp").forward(request, response);
+
 	}
 
+
 	
+
 }

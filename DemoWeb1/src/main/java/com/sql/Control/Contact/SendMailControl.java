@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Contact;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
-
-import Email.SendMail;
+import com.sql.Email.SendMail;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;

@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -23,7 +23,8 @@ public class SignUpControl extends HttpServlet {
 		String pass = request.getParameter("pass");
 		String repass = request.getParameter("repass");
 		if(!pass.equals(repass)) {
-			response.sendRedirect("login.jsp");
+			request.setAttribute("mess", "Wrong Passwork Confirm");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 		else {
 			DAO dao = new DAO();
@@ -37,7 +38,6 @@ public class SignUpControl extends HttpServlet {
 			{
 				request.setAttribute("mess", "Tài khoản tồn tại");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
-				
 			}
 		}
 	}

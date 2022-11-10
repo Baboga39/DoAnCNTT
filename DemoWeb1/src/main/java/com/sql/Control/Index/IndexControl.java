@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Index;
 
 import java.io.IOException;
 import java.util.List;

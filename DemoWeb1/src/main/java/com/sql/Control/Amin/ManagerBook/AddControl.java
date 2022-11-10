@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Amin.ManagerBook;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -15,7 +15,6 @@ import com.sql.Dao.DAO;
 @WebServlet("/add")
 public class AddControl extends HttpServlet {
 	
-
 	@Override
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html;charset=UTF-8");
@@ -23,11 +22,14 @@ public class AddControl extends HttpServlet {
 		String image = req.getParameter("image");
 		String price = req.getParameter("price");
 		String PriceSale = req.getParameter("PriceSale");
-		String get = req.getParameter("category");
-		int category = Integer.parseInt(get);
+		String getCate = req.getParameter("category");
+		String getauthor = req.getParameter("author");
+		int category = Integer.parseInt(getCate);
+		int author = Integer.parseInt(getauthor);
+		System.out.println(author);
 		DAO dao = new DAO();
-		dao.InsertBook(name, image, price, PriceSale, category);
-		resp.sendRedirect("Manager");
+		dao.InsertBook(name, image, price, PriceSale, category,author);
+		resp.sendRedirect("ManagerBook");
 		}
 	
 	

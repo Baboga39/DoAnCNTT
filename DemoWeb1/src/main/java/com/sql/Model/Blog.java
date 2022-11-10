@@ -1,5 +1,5 @@
 package com.sql.Model;
-
+//Hai
 public class Blog {
 	private int blogID;
 	private int bId;

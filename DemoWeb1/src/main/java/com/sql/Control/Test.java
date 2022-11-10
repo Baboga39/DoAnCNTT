@@ -3,18 +3,20 @@ package com.sql.Control;
 import java.util.List;
 
 import com.sql.Dao.DAO;
+import com.sql.Model.Author;
 import com.sql.Model.Blog;
 import com.sql.Model.Book;
 
 public class Test {
 
 	public static void main(String[] args) {
-		
 		DAO dao = new DAO();
-		List<Blog> list = dao.getAllBlog();
-		for(Blog c : list)
+		List<Author> list = dao.getAllAuthor();
+		for(Author a : list)
 		{
-		System.out.println(c);		
+			System.out.println(a.getAuId());
 		}
 	}
-}
+	
+		
+	}

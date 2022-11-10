@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Shop;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,26 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.sql.Dao.DAO;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
-
+//Hai
 /**
- * Servlet implementation class shop
+ * Servlet implementation class PagingControl
  */
-@WebServlet("/shop")
-public class ShopControl extends HttpServlet {
-
+@WebServlet("/Paging")
+public class PagingControl extends HttpServlet {
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		
 		DAO dao = new DAO();
-		List<Book> list = dao.getAllBook();
-		List<Category> listC = dao.getAllCategory();
 		String indexPage = request.getParameter("index");
 		if(indexPage==null)
 		{
 			indexPage="1";
 		}
 		int index =Integer.parseInt(indexPage);
-		List<Book> listPa = dao.PagingBook(index);
-
+		List<Book> list = dao.PagingBook(index);
+		List<Category> listC = dao.getAllCategory();
 		int count  = dao.getTotalBook();
 		int endPage = count/6;
 		if(count  % 6!=0 ) {
@@ -39,11 +38,10 @@ public class ShopControl extends HttpServlet {
 		}
 		request.setAttribute("tag", index);
 		request.setAttribute("EndPage",endPage);
-		request.setAttribute("listP", listPa);
+		request.setAttribute("listP", list);
 		request.setAttribute("listC", listC);
-	
 		request.getRequestDispatcher("shop.jsp").forward(request, response);
 	}
 
 	
-	}
+}

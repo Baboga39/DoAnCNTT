@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

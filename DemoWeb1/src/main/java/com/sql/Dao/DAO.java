@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.sql.Connection.SqlServerConnection;
+import com.sql.Model.Author;
 import com.sql.Model.Blog;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
@@ -57,6 +58,25 @@ public class DAO {
 		return list;
 	}
 
+	// Hai
+		// Show Author
+		public List<Author> getAllAuthor() {
+			List<Author> list = new ArrayList<>();
+
+			String query = "SELECT * FROM Author";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					list.add(new Author(rs.getInt(1),rs.getString(2)));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			return list;
+		}
 	// Hai
 	// Get Book By CID
 	public List<Book> getBookByCID(String cid) {
@@ -299,7 +319,6 @@ public class DAO {
 		}
 		return null;
 	}
-
 	// Hai
 	// Sign Up
 	public void SignUp(String name, String phone, String email, String user, String pass, String username) {
@@ -412,18 +431,19 @@ public class DAO {
 	}
 
 	// Insert Book Hai
-	public void InsertBook(String name, String image, String price, String PriceSale, int category) {
+	public void InsertBook(String name, String image, String price, String PriceSale, int category , int author) {
 		String query = "INSERT [dbo].[Book] ([BName], [BPrice], [BPriceSale],"
 				+ " [AuID], [BCate], [BImage], [BestSeller], [NewViral], [HotSale], "
-				+ "[Popular]) VALUES (?, ?, ?, NULL, ?, ?, 0, 0, 0, 0);";
+				+ "[Popular]) VALUES (?, ?, ?, ?, ?, ?, 0, 0, 0, 0);";
 		try {
 			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 			ps = conn.prepareStatement(query);
 			ps.setString(1, name);
-			ps.setString(5, image);
+			ps.setString(6, image);
 			ps.setString(2, price);
+			ps.setInt(4, author);
 			ps.setString(3, PriceSale);
-			ps.setInt(4, category);
+			ps.setInt(5, category);
 			ps.executeUpdate();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -515,6 +535,38 @@ public class DAO {
 
 		return null;
 	}
-
+	// Lay Tong Blog Hai
+	public int getTotalBlog() {
+		String query = "SELECT COUNT(*) from Blog";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return 0;
+	}
+	// Hai
+	public List<Blog> PagingBlog(int index) {
+		List<Blog> list = new ArrayList<Blog>();
+		String query = "SELECT * FROM Blog ORDER BY BlogID OFFSET ? ROWS FETCH NEXT 6 ROWS ONLY";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setInt(1, (index - 1) * 6);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return list;
+	}
 	
 }

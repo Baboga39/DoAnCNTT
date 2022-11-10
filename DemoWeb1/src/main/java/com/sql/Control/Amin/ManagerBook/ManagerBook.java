@@ -1,6 +1,5 @@
-package com.sql.Control;
+package com.sql.Control.Amin.ManagerBook;
 
-//Hai
 import java.io.IOException;
 import java.util.List;
 
@@ -9,33 +8,32 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
+import com.sql.Model.Author;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
+import com.sql.Model.User;
 
 /**
- * Servlet implementation class CategoryControl
+ * Servlet implementation class ManagerBook
  */
-@WebServlet("/category")
-public class CategoryControl extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-  
+@WebServlet("/ManagerBook")
+public class ManagerBook extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		response.setContentType("text/html;charset=UTF-8");
-		String cateID = request.getParameter("cid"); // Lay id Category
 		DAO dao = new DAO();
-		List<Book> list = dao.getBookByCID(cateID);
+		HttpSession session = request.getSession();
+		User a = (User) session.getAttribute("acc");
 		List<Category> listC = dao.getAllCategory();
-
-		request.setAttribute("listP", list);
+		List<Author> listAu= dao.getAllAuthor();
+		List<Book> list = dao.getAllBook();
+		request.setAttribute("listMa", list);
 		request.setAttribute("listC", listC);
-		request.getRequestDispatcher("shop.jsp").forward(request, response);
-
+		request.setAttribute("listAu", listAu);
+		request.getRequestDispatcher("ManagerBook.jsp").forward(request, response);
 	}
 
-
 	
-
 }

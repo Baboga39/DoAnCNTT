@@ -1,5 +1,5 @@
-package Email;
-
+package com.sql.Email;
+//Hai
 import java.util.Properties;
 
 import javax.mail.Authenticator;

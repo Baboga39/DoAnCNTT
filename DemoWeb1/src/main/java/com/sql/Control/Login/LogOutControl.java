@@ -1,4 +1,4 @@
-package com.sql.Control;
+package com.sql.Control.Login;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,23 +6,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.sql.Dao.DAO;
+import javax.servlet.http.HttpSession;
 //Hai
 /**
- * Servlet implementation class DeleteControl
+ * Servlet implementation class LogOutControl
  */
-@WebServlet("/delete")
-public class DeleteControl extends HttpServlet {
+@WebServlet("/logout")
+public class LogOutControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		String bid = request.getParameter("bid");
-		DAO dao = new DAO();
-		dao.DeleteBook(bid);
-		response.sendRedirect("Manager");
+		HttpSession session = request.getSession();
+		session.removeAttribute("acc");
+		response.sendRedirect("shop");
 	}
 
 }
