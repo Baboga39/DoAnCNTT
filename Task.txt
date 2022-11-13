@@ -1,11 +1,16 @@
-Blog Detail: Content, Forward, Comment
-Load Blog
-
-
-Category Author
-Edit Manager
+Chưa làm:
 Paging SlideBar
 Wishlist
-Cart 
-Check Out
+add Order Item
+Cart: Chưa add database
+Update, Delete: Cart
+Cmt Blog:
+User: Chưa có hình
+Detail: Mô tả
+Mail Checkout
+Admin: 
+Quản lý blog
+Quản lý user
 
+Khi 8h sáng
+8h tối 

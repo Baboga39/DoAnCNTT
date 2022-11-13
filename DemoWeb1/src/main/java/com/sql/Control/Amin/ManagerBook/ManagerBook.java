@@ -26,9 +26,23 @@ public class ManagerBook extends HttpServlet {
 		DAO dao = new DAO();
 		HttpSession session = request.getSession();
 		User a = (User) session.getAttribute("acc");
+		
 		List<Category> listC = dao.getAllCategory();
 		List<Author> listAu= dao.getAllAuthor();
-		List<Book> list = dao.getAllBook();
+		String indexPage = request.getParameter("index");
+		if(indexPage==null)
+		{
+			indexPage="1";
+		}
+		int index =Integer.parseInt(indexPage);
+		List<Book> list = dao.PagingManagerBook(index);
+		int count  = dao.getTotalBook();
+		int endPage = count/12;
+		if(count  % 12 != 0 ) {
+			endPage++;
+		}
+		request.setAttribute("tag", index);
+		request.setAttribute("EndPage",endPage);
 		request.setAttribute("listMa", list);
 		request.setAttribute("listC", listC);
 		request.setAttribute("listAu", listAu);

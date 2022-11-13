@@ -11,6 +11,7 @@ import com.sql.Model.Author;
 import com.sql.Model.Blog;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
+import com.sql.Model.Order;
 import com.sql.Model.User;
 
 public class DAO {
@@ -59,7 +60,7 @@ public class DAO {
 	}
 
 	// Hai
-		// Show Author
+		// Show Authorz
 		public List<Author> getAllAuthor() {
 			List<Author> list = new ArrayList<>();
 
@@ -97,7 +98,25 @@ public class DAO {
 
 		return list;
 	}
+	// Get Book By AID
+	public List<Book> getBookByAID(String cid) {
+		List<Book> list = new ArrayList<>();
 
+		String query = "SELECT * FROM Book WHERE AuID = ?";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, cid);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return list;
+	}
 	// Hai
 	// Get book 10000-50000
 	public List<Book> getBookPrice1to5() {
@@ -449,6 +468,31 @@ public class DAO {
 			// TODO: handle exception
 		}
 	}
+	// Edit Book Hai
+	public void EditBook(String name, String image, String price, String PriceSale, int category , int author , String bid) {
+		String query = "UPDATE Book \r\n"
+				+ "SET BName = ?,\r\n"
+				+ "BImage=?,\r\n"
+				+ "BPrice=?,\r\n"
+				+ "BPriceSale=?,\r\n"
+				+ "BCate=?,\r\n"
+				+ "AuID=? \r\n"
+				+ "WHERE BId=?";
+		try {
+			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(2, image);
+			ps.setString(3, price);
+			ps.setInt(6, author);
+			ps.setString(4, PriceSale);
+			ps.setInt(5, category);
+			ps.setString(7, bid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 	// Lay Tong so cuon sach Hai
 	public int getTotalBook() {
@@ -483,6 +527,23 @@ public class DAO {
 		}
 		return list;
 	}
+	// Hai
+		public List<Book> PagingManagerBook(int index) {
+			List<Book> list = new ArrayList<Book>();
+			String query = "SELECT * FROM Book ORDER BY BId OFFSET ? ROWS FETCH NEXT 12 ROWS ONLY";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, (index - 1) * 12);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					list.add(new Book(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getString(7)));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return list;
+		}
 
 	// Hai
 	public void InsertFeedback(String name, String email, String price, String content) {
@@ -568,5 +629,45 @@ public class DAO {
 		}
 		return list;
 	}
-	
+	// Hai
+		public List<Book> Selectop10() {
+			List<Book> list = new ArrayList<Book>();
+			String query = "SELECT top 10 * FROM OrderItem \r\n"
+					+ "LEFT JOIN  Book ON OrderItem.Book_ID = Book.BId\r\n"
+					+ "ORDER BY Quantity DESC ";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					list.add(new Book(rs.getInt(1), rs.getString(5), rs.getInt(2), rs.getInt(7), rs.getString(10)));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return list;
+		}
+		//Insert Order
+		public List<Order> InsertOrder(String name,String country, String address,String zip,String phone,String email,int total, String note) {
+			List<Order> list = new ArrayList<Order>();
+			String query = "INSERT INTO  [Order] VALUES(\r\n"
+					+ "16,?,?,?,?,?,?,?,?)"; // User voi ID bang 16 la khach hang ko can dang nhap
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setString(1, name);
+				ps.setString(2, country);
+				ps.setString(3, address);
+				ps.setString(4, zip);
+				ps.setString(5, phone);
+				ps.setString(6, email);
+				ps.setInt(7, total);
+				ps.setString(8, note);
+				ps.executeUpdate();
+			
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return list;
+		}
 }

@@ -1,6 +1,7 @@
 package com.sql.Control.Contact;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.PasswordAuthentication;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
 import com.sql.Email.SendMail;
+import com.sql.Model.Cart;
+import com.sql.Model.CartItem;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -33,13 +36,17 @@ public class SendMailControl extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("contact.jsp");
 		rd.forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		if (session.getAttribute("cart") != null) {
+			Cart cart = (Cart) session.getAttribute("cart");
+			List<CartItem> items = cart.getItems();
+			for (CartItem a : items) {
+				System.out.println(a.toString());
+			}
+			request.setAttribute("items", items);}
 		String name =request.getParameter("Name");
 		String email =request.getParameter("Email");
 		String content = request.getParameter("Messeage");

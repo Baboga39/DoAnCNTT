@@ -225,20 +225,24 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="product__cart__item">
+                    <td class="product__cart__item" >
                       <div class="product__cart__item__pic">
                         <img src="img/product/product-1.jpg" alt="" />
                       </div>
                       <div class="product__cart__item__text">
                         <h6>Book</h6>
                         <h5>$98.49</h5>
+                      
                       </div>
                     </td>
                     <td class="quantity__item">
+                      <a id="increase" class="btn btn-primary">+</a>
                       <div class="quantity">
                         <div class="pro-qty-2">
-                          <input type="text" value="1" />
+                          <input class="BId" name="BId" type="hidden" value="${i.BId}"/>
+                          <input class="quantity" name="quantity" type="text" value="1" />
                         </div>
+                        <a id="decrease" class="btn btn-primary">-</a>
                       </div>
                     </td>
                     <td class="cart__price">$ 30.00</td>
@@ -416,8 +420,27 @@
     </a>
 
     <!-- JS  -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      $('#increase').on('click',function(){
+        alert('Chao em')
+        var BId = $('#increase').find('.BId')
+        var quantity = $('#increase').find('.quantity');
+        $.ajax({
+          type: 'GET',
+          url:'update-cart',
+          data:{BId:BId,quantity:quantity},
+          success: function(data){
+            alert('Thanh Cong')
+          },
+          error:function(data){
+            aler("that bai")
+          }
+      
+        })
+      })
+    </script>
   </body>
 </html>

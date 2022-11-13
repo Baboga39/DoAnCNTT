@@ -26,7 +26,6 @@ public class AddControl extends HttpServlet {
 		String getauthor = req.getParameter("author");
 		int category = Integer.parseInt(getCate);
 		int author = Integer.parseInt(getauthor);
-		System.out.println(author);
 		DAO dao = new DAO();
 		dao.InsertBook(name, image, price, PriceSale, category,author);
 		resp.sendRedirect("ManagerBook");

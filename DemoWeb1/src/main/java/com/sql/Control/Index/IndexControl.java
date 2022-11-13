@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
 import com.sql.Model.Book;
+import com.sql.Model.Cart;
+import com.sql.Model.CartItem;
 import com.sql.Model.User;
 //Hai
 /**
@@ -24,6 +26,11 @@ public class IndexControl extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		if (session.getAttribute("cart") != null) {
+			Cart cart = (Cart) session.getAttribute("cart");
+			List<CartItem> items = cart.getItems();
+			request.setAttribute("items", items);}
 		DAO dao = new DAO();
 		List<Book> listB = dao.BestSeller();
 		List<Book> listN = dao.getNewArrivals();

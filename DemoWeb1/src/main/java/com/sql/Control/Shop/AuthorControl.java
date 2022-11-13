@@ -22,7 +22,7 @@ public class AuthorControl extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		String cateID = request.getParameter("cid"); // Lay id Category
+		String cateID = request.getParameter("aid"); // Lay id Category
 		DAO dao = new DAO();
 		List<Book> list = dao.getBookByCID(cateID);
 		List<Category> listC = dao.getAllCategory();

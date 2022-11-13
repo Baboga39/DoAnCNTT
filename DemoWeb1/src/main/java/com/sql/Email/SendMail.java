@@ -17,7 +17,6 @@ public class SendMail {
 
 	public static void sendMailToEmail(String email, String name, String Content) {
 		String fromEmail = ACCOUNT;
-		System.out.println("Start send mail");
 		try {
 			Properties props = new Properties();
 			props.put("mail.smtp.host", "smtp.office365.com");
@@ -30,7 +29,6 @@ public class SendMail {
 					return new PasswordAuthentication(ACCOUNT, PASSWORD);
 				}
 			};
-
 			// Gui email
 			Session session = Session.getInstance(props, auth);
 			MimeMessage msg = new MimeMessage(session);
@@ -42,7 +40,6 @@ public class SendMail {
 			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email, false));
 			Transport.send(msg);
 			System.out.println("Send mail complete");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
