@@ -49,7 +49,7 @@ public class AddCart extends HttpServlet {
 					if(session.getAttribute("acc")!= null)
 					{
 						User user = (User) session.getAttribute("acc"); // Lay User
-						cart.setuId(user.getUID());
+						cart.setuId(user.getuID());
 					}
 				}
 				cart.add(item);

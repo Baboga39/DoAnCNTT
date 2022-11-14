@@ -1,71 +1,57 @@
 package com.sql.Model;
 //Hai
 public class User {
-	private int UID ;
-	private String UName;
-	private String UPhone;
-	private String UImage;
-	private String Email;
-	private String UPass;
-	private String UTK;
+	private int uID ;
+	private String uName;
+	private String uPhone;
+	private String uImage;
+	private String email;
+	private String uPass;
+	private String uTK;
 	private String isShell;
 	private String isUser;
 	private String isAdmin;
-	public User(int uID, String uName, String uPhone, String uImage, String email, String uPass,
-			String uTK, String isShell, String isUser, String isAdmin) {
-		super();
-		UID = uID;
-		UName = uName;
-		UPhone = uPhone;
-		UImage = uImage;
-		Email = email;
-		UPass = uPass;
-		UTK = uTK;
-		this.isShell = isShell;
-		this.isUser = isUser;
-		this.isAdmin = isAdmin;
+	public int getuID() {
+		return uID;
 	}
-	public int getUID() {
-		return UID;
+	public void setuID(int uID) {
+		this.uID = uID;
 	}
-	public void setUID(int uID) {
-		UID = uID;
+	public String getuName() {
+		return uName;
 	}
-	public String getUName() {
-		return UName;
+	public void setuName(String uName) {
+		this.uName = uName;
 	}
-	public void setUName(String uName) {
-		UName = uName;
+	public String getuPhone() {
+		return uPhone;
 	}
-	public String getUPhone() {
-		return UPhone;
+	public void setuPhone(String uPhone) {
+		this.uPhone = uPhone;
 	}
-	public void setUPhone(String uPhone) {
-		UPhone = uPhone;
+	public String getuImage() {
+		return uImage;
 	}
-	public String getUImage() {
-		return UImage;
-	}
-	public void setUImage(String uImage) {
-		UImage = uImage;
+	public void setuImage(String uImage) {
+		this.uImage = uImage;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
-	public String getUPass() {
-		return UPass;
+	public String getuPass() {
+		return uPass;
 	}
-	public void setUPass(String uPass) {
-		UPass = uPass;
+	public void setuPass(String uPass) {
+		this.uPass = uPass;
 	}
-	public String getUTK() {
-		return UTK;
+	public String getuTK() {
+		return uTK;
 	}
-	public void setUTK(String uTK) {
-		UTK = uTK;
+	public void setuTK(String uTK) {
+		this.uTK = uTK;
 	}
 	public String getIsShell() {
 		return isShell;
@@ -85,11 +71,26 @@ public class User {
 	public void setIsAdmin(String isAdmin) {
 		this.isAdmin = isAdmin;
 	}
+	public User(int uID, String uName, String uPhone, String uImage, String email, String uPass, String uTK,
+			String isShell, String isUser, String isAdmin) {
+		super();
+		this.uID = uID;
+		this.uName = uName;
+		this.uPhone = uPhone;
+		this.uImage = uImage;
+		this.email = email;
+		this.uPass = uPass;
+		this.uTK = uTK;
+		this.isShell = isShell;
+		this.isUser = isUser;
+		this.isAdmin = isAdmin;
+	}
 	@Override
 	public String toString() {
-		return "User [UID=" + UID + ", UName=" + UName + ", UPhone=" + UPhone + ", UImage=" + UImage
-				+ ", Email=" + Email + ", UPass=" + UPass + ", UTK=" + UTK + ", isShell=" + isShell + ", isUser="
-				+ isUser + ", isAdmin=" + isAdmin + "]";
+		return "User [uID=" + uID + ", uName=" + uName + ", uPhone=" + uPhone + ", uImage=" + uImage + ", email="
+				+ email + ", uPass=" + uPass + ", uTK=" + uTK + ", isShell=" + isShell + ", isUser=" + isUser
+				+ ", isAdmin=" + isAdmin + "]";
 	}
+	
 	
 }
