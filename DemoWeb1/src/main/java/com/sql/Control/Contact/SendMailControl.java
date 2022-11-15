@@ -50,6 +50,7 @@ public class SendMailControl extends HttpServlet {
 		String name =request.getParameter("Name");
 		String email =request.getParameter("Email");
 		String content = request.getParameter("Messeage");
+		String format = "name";
 		SendMail.sendMailToEmail(email,name,content);
 		DAO dao = new DAO();
 		dao.InsertFeedback(name, email, email, content);

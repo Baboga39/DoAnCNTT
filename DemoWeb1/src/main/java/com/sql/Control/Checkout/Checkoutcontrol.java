@@ -49,6 +49,6 @@ public class Checkoutcontrol extends HttpServlet {
 			e.printStackTrace();
 			
 		}
-		request.getRequestDispatcher("checkout.jsp").forward(request, response);
+		response.sendRedirect("checkout.jsp");
 	}
 }

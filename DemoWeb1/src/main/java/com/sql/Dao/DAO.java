@@ -545,7 +545,88 @@ public class DAO {
 			}
 			return list;
 		}
+		// Lay Tong so cuon sach Hai
+		public int getTotalUser() {
+			String query = "SELECT COUNT(*) from [User]";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					return rs.getInt(1);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return 0;
+		}
+		// Hai
+		public void DeleteUser(String uid) {
+			String query = "DELETE FROM [User] WHERE UName= ?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setString(1, uid);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		// Hai
+		// GET Book By Id
+		public User getUserByBId(String uid) {
+			String query = "SELECT * FROM [User] WHERE UID = ?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setString(1, uid);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), 
+							rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 
+			return null;
+		}
+		// Edit Book Hai
+		public void EditUser(String name, String image, String email, String phone,String imageU, String pass , String username , int uid) {
+			String query = "UPDATE [User] SET UName=?, UPhone=?,UImage=?,Email=?,UPass=?,UTK=?,isShell=0,isUser=1,isAdmin=0 WHERE UID =?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setString(1, name);
+				ps.setString(2, phone);
+				ps.setString(3, imageU);
+				ps.setString(6, username);
+				ps.setString(4, email);
+				ps.setString(5, pass);
+				ps.setInt(7, uid);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		// Hai
+				public List<User> PagingManagerUser(int index) {
+					List<User> list = new ArrayList<User>();
+					String query = "SELECT * FROM [User] ORDER BY UID OFFSET ? ROWS FETCH NEXT 10 ROWS ONLY";
+					try {
+						conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+						ps = conn.prepareStatement(query);
+						ps.setInt(1, (index - 1) * 10);
+						rs = ps.executeQuery();
+						while (rs.next()) {
+							list.add(new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), 
+									rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10)));
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					return list;
+				}
 	// Hai
 	public void InsertFeedback(String name, String email, String price, String content) {
 		String query = "INSERT INTO Feedback VALUES (?,?,?)";
