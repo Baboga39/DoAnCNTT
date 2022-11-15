@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.poi.util.SystemOutLogger;
+
 import com.sql.Dao.DAO;
 import com.sql.Model.Cart;
 import com.sql.Model.User;
@@ -18,18 +20,28 @@ import com.sql.Model.User;
 @WebServlet("/EditProfile")
 public class EditProfile extends HttpServlet {
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			HttpSession session = request.getSession();
+	@Override
+		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		try {
 			User user = (User) session.getAttribute("acc");
-			String username = request.getParameter("user");
-			String passsword = request.getParameter("pass");
-			String email = request.getParameter("email");
-			String image = request.getParameter("images");
+			String username = req.getParameter("user");
+			String passsword = req.getParameter("pass");
+			String email = req.getParameter("email");
+			String image = req.getParameter("images");
 			DAO dao = new DAO();
-		   dao.editProfile(user, username, passsword, image, email);
+			dao.UpdateUser(user, username, passsword, image, email);
+			System.out.print(username);
+			System.out.print(user.getuName());
 			session.setAttribute("acc", user);
-			request.getRequestDispatcher("Profile.jsp").forward(request, response);
+			req.setAttribute("mess", "Vui lòng đăng nhập lại");
+			req.getRequestDispatcher("Profile.jsp").forward(req, resp);
+		}
+		 catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-	}
+			
 
+	}
 }

@@ -27,9 +27,6 @@ public class MenuCotrol extends HttpServlet {
 		if (session.getAttribute("cart") != null) {
 			Cart cart = (Cart) session.getAttribute("cart");
 			List<CartItem> items = cart.getItems();
-			for (CartItem a : items) {
-				System.out.println(a.toString());
-			}
 			request.setAttribute("items", items);
 		}
 		request.getRequestDispatcher("menu.jsp").forward(request, response);

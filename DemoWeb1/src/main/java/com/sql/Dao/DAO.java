@@ -671,32 +671,23 @@ public class DAO {
 			}
 			return list;
 		}
-		public void UpdateUser(User user)
+		public void UpdateUser(User user , String username, String passs, String image, String email)
 		{
-			String query ="UPDATE [User] SET UName='?' , UPhone='?' , UImage='?' , Email='?' ,UPass = '?',  UTK = '?', isShell= 0,isUser=1 ,isAdmin=0 WHERE UID = ?";
+			String query ="UPDATE [User] SET UName=? , UPhone=? , UImage=? , Email=? ,UPass = ?,  UTK = ?, isShell= 0,isUser=1 ,isAdmin=0 WHERE UID = ?";
 			try {
 				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 				ps = conn.prepareStatement(query);
 				ps.setString(1, user.getuName());
 				ps.setString(2, user.getuPhone());
-				ps.setString(3, user.getuImage());
-				ps.setString(4, user.getEmail());
-				ps.setString(5, user.getuPass());
-				ps.setString(6, user.getuTK());
+				ps.setString(3,image);
+				ps.setString(4, email);
+				ps.setString(5, passs);
+				ps.setString(6,username);
 				ps.setInt(7, user.getuID());
 				ps.executeUpdate();
 			} catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
 			}
-		}
-		public User editProfile (User old , String username, String passs, String image, String email) {
-				
-			old.setuImage(image);
-			old.setuPass(passs);
-			old.setuTK(username);
-			old.setEmail(email);
-			DAO dao =new DAO();
-			dao.UpdateUser(old);
-			return old;
+			
 		}
 }
