@@ -31,9 +31,16 @@ public class Top10Excel extends HttpServlet {
 		List<Book> listPo = dao.Selectop10();
 		XSSFWorkbook workbook = new XSSFWorkbook();
 	    XSSFSheet sheet = workbook.createSheet("Top10_Book");
-	    int rowNum = 0;
+	    int rowNum = 1;
 	    Row firstRow = sheet.createRow(rowNum++);
+	    Row SecondRow = sheet.createRow(rowNum++);
 	    Cell firstCell = firstRow.createCell(0);
+	    Cell cell8 = SecondRow.createCell(0);
+	    cell8.setCellValue("ID");
+        Cell cell5 = SecondRow.createCell(1);
+        cell5.setCellValue("Name");
+        Cell cell6 = SecondRow.createCell(2);
+        cell6.setCellValue("Giá");
 	    firstCell.setCellValue("Top 10 sách bán chạy nhất ");
 	    for (Book book : listPo) {
 	        Row row = sheet.createRow(rowNum++);
