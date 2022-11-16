@@ -30,9 +30,6 @@ public class ShopControl extends HttpServlet {
 		if (session.getAttribute("cart") != null) {
 			Cart cart = (Cart) session.getAttribute("cart");
 			List<CartItem> items = cart.getItems();
-			for (CartItem a : items) {
-				System.out.println(a.toString());
-			}
 			request.setAttribute("items", items);}
 		DAO dao = new DAO();
 		List<Book> list = dao.getAllBook();

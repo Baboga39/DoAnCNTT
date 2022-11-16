@@ -16,6 +16,7 @@ import com.sql.Model.Book;
 import com.sql.Model.Cart;
 import com.sql.Model.CartItem;
 import com.sql.Model.Category;
+import com.sql.Model.Coment;
 
 /**
  * Servlet implementation class Blogdetail
@@ -24,20 +25,29 @@ import com.sql.Model.Category;
 public class Blogdetail extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DAO dao = new DAO();
-		HttpSession session = request.getSession();
-		if (session.getAttribute("cart") != null) {
-			Cart cart = (Cart) session.getAttribute("cart");
-			List<CartItem> items = cart.getItems();
-			for (CartItem a : items) {
-				System.out.println(a.toString());
-			}
-			request.setAttribute("items", items);}
-		response.setContentType("text/html;charset=UTF-8");
-		String Blogid = request.getParameter("Blogid"); // Lay id Category
-		System.out.println(Blogid);
-		Blog list = dao.getBlogByBId(Blogid);
-		request.setAttribute("blogDetail", list);
-		request.getRequestDispatcher("blog_details.jsp").forward(request, response);
+		try {
+			DAO dao = new DAO();
+			HttpSession session = request.getSession();
+			if (session.getAttribute("cart") != null) {
+				Cart cart = (Cart) session.getAttribute("cart");
+				List<CartItem> items = cart.getItems();
+				for (CartItem a : items) {
+					System.out.println(a.toString());
+				}
+				request.setAttribute("items", items);}
+			response.setContentType("text/html;charset=UTF-8");
+			String Blogid = request.getParameter("Blogid"); // Lay id Blog
+			Blog list = dao.getBlogByBId(Blogid);
+			int logid =Integer.parseInt(Blogid);
+			List<Coment> listcmt = dao.GetCmtbyID(logid);
+			int totalCmt = dao.getTotalCmt(logid);
+			request.setAttribute("totalCmt", totalCmt);
+			request.setAttribute("blogDetail", list);
+			session.setAttribute("blogid", list);
+			request.setAttribute("listCommnent", listcmt);
+			request.getRequestDispatcher("blog_details.jsp").forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -12,6 +12,7 @@ import com.sql.Model.Author;
 import com.sql.Model.Blog;
 import com.sql.Model.Book;
 import com.sql.Model.Category;
+import com.sql.Model.Coment;
 import com.sql.Model.Order;
 import com.sql.Model.User;
 
@@ -752,6 +753,7 @@ public class DAO {
 			}
 			return list;
 		}
+		//Hai
 		public void UpdateUser(User user , String username, String passs, String image, String email)
 		{
 			String query ="UPDATE [User] SET UName=? , UPhone=? , UImage=? , Email=? ,UPass = ?,  UTK = ?, isShell= 0,isUser=1 ,isAdmin=0 WHERE UID = ?";
@@ -770,5 +772,54 @@ public class DAO {
 				e.printStackTrace();
 			}
 			
+		}
+		
+		//Hai
+		public void InsertCmt(int BlogId, String content, String name, String email ,String phone) {
+			String query = "INSERT INTO Review VALUES(?,?,?,?,?)";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, BlogId);
+				ps.setString(2, content);
+				ps.setString(3, name);
+				ps.setString(4, email);
+				ps.setString(5, phone);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		public List<Coment> GetCmtbyID(int BlogId) {
+			List<Coment> list = new ArrayList<>();
+
+			String query = " SELECT * FROM Review WHERE BlogID = ?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, BlogId);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					list.add(new Coment(rs.getInt(1),rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6)));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return list;
+		}
+		public int getTotalCmt(int blogid) {
+			String query = "SELECT COUNT(*) from Review WHERE BlogID = ?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, blogid);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					return rs.getInt(1);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return 0;
 		}
 }
