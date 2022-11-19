@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sql.Dao.DAO;
+import com.sql.Email.SendMailConfirm;
 import com.sql.Model.Cart;
 import com.sql.Model.CartItem;
 import com.sql.Model.Order;
@@ -34,6 +35,8 @@ public class Checkoutcontrol extends HttpServlet {
 			request.setAttribute("items", items);}
 			request.setCharacterEncoding("UTF-8");
 		try {
+			Cart cart = (Cart) session.getAttribute("cart");
+			List<CartItem> items = cart.getItems();
 			String name = request.getParameter("name");
 			String total = request.getParameter("total");
 			String country = request.getParameter("country");
@@ -44,6 +47,7 @@ public class Checkoutcontrol extends HttpServlet {
 			String note = request.getParameter("note");
 			int totalP= Integer.parseInt(total);
 			DAO dao = new DAO();
+			
 			dao.InsertOrder(name, country, address, postcode, phone, email, totalP, note);
 		} catch (Exception e) {
 			e.printStackTrace();

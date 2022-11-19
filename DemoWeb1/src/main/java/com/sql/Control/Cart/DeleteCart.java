@@ -27,9 +27,7 @@ public class DeleteCart extends HttpServlet {
 		if (session.getAttribute("cart") != null) {
 			Cart cart = (Cart) session.getAttribute("cart");
 			List<CartItem> items = cart.getItems();
-			for (CartItem a : items) {
-				System.out.println(a.toString());
-			}
+		
 			request.setAttribute("items", items);}
 		request.setCharacterEncoding("UTF-8");
 		try {
@@ -45,7 +43,7 @@ public class DeleteCart extends HttpServlet {
 				response.sendRedirect(request.getContextPath()+"/ShoppingCart");
 			}
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 

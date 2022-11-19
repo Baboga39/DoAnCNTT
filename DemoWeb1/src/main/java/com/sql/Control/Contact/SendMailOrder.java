@@ -61,7 +61,15 @@ public class SendMailOrder extends HttpServlet {
 		content.append("Tổng tiền: ").append(String.format("%d", cart.totalPriceSale())).append("$").append("<br>");
 		content.append("Cảm ơn bạn đã đặt hàng tại Shoes Family<br>");
 		content.append("Chủ cửa hàng ");
-		System.out.print(content.toString());
+		if(content.toString()==null)
+		{
+			System.out.print("Loi");
+		}
+		else
+		{
+			
+			System.out.print(content.toString());
+		}
 		SendMailConfirm.sendMailToEmail(email,name,content.toString());
 		DAO dao = new DAO();
 		dao.InsertFeedback(name, email, email, content.toString());
