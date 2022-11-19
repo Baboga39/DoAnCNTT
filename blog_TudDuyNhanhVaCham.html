@@ -1,603 +1,68 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Male_Fashion Template" />
-    <meta name="keywords" content="Male_Fashion, unica, creative, html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>MY SHOP</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+<!-- Google Font -->
+<link
+href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+rel="stylesheet" />
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+<!-- FONT AWNSOME  -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- FONT AWNSOME  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<!-- linearicons -->
+<link rel="stylesheet"
+href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" />
 
-    <!-- linearicons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
-    />
-
-    <!-- LINK BOOTSTRAP  -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-3">
-            <div class="header__logo">
-              <a href="./index.html">
-                <img src="./img/logo.png" alt="" />
-              </a>
-            </div>
-          </div>
-          <div class="navbar col-lg-6 col-md-6">
-            <nav class="header__menu mobile-menu">
-              <ul>
-                <li class="itemHeader">
-                  <a href="./index.html">Home</a>
-                </li>
-                <li class="itemHeader"><a href="./shop.html">Shop</a></li>
-                <li>
-                  <a href="#">Pages</a>
-                </li>
-                <li class="itemHeader active">
-                  <a href="./blog.html">Blog</a>
-                </li>
-                <li class="itemHeader">
-                  <a href="./contact.html">Contacts</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="col-lg-3 col-md-3">
-            <div class="header__nav__option">
-              <div class="search">
-                <input placeholder="Enter..." class="inputSearch" />
-                <i class="fa-solid fa-magnifying-glass inputIcon"></i>
-              </div>
-              <a class="search-switch">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </a>
-              <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-              <a href="#"><i class="fa-solid fa-heart"></i></a>
-              <a href="#" class="js-show-cart"
-                ><i class="fa-solid fa-cart-shopping"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="canvas__open"><i class="fa fa-bars"></i></div>
-      </div>
-    </header>
-
-    <div class="wrap-header-cart js-panel-cart">
-      <div class="header-cart flex-col-l p-l-65 p-r-25">
-        <div class="header-cart-title flex-w flex-sb-m p-b-8">
-          <span class="mtext-103 cl2"> Your Cart </span>
-
-          <div class="iconCart">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-        </div>
-
-        <div class="header-cart-content flex-w js-pscroll">
-          <ul class="header-cart-wrapitem w-full">
-            <li class="header-cart-item flex-w flex-t m-b-12">
-              <div class="header-cart-item-img">
-                <img src="img/product/product-1.jpg" alt="IMG" />
-              </div>
-
-              <div class="header-cart-item-txt p-t-8">
-                <a
-                  href="#"
-                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
-                >
-                  White Shirt Pleat
-                </a>
-
-                <span class="header-cart-item-info"> 1 x $19.00 </span>
-              </div>
-            </li>
-
-            <li class="header-cart-item flex-w flex-t m-b-12">
-              <div class="header-cart-item-img">
-                <img src="img/product/product-1.jpg" alt="IMG" />
-              </div>
-
-              <div class="header-cart-item-txt p-t-8">
-                <a
-                  href="#"
-                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
-                >
-                  White Shirt Pleat
-                </a>
-
-                <span class="header-cart-item-info"> 1 x $19.00 </span>
-              </div>
-            </li>
-            <li class="header-cart-item flex-w flex-t m-b-12">
-              <div class="header-cart-item-img">
-                <img src="img/product/product-1.jpg" alt="IMG" />
-              </div>
-
-              <div class="header-cart-item-txt p-t-8">
-                <a
-                  href="#"
-                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
-                >
-                  White Shirt Pleat
-                </a>
-
-                <span class="header-cart-item-info"> 1 x $19.00 </span>
-              </div>
-            </li>
-            <li class="header-cart-item flex-w flex-t m-b-12">
-              <div class="header-cart-item-img">
-                <img src="img/product/product-1.jpg" alt="IMG" />
-              </div>
-
-              <div class="header-cart-item-txt p-t-8">
-                <a
-                  href="#"
-                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
-                >
-                  White Shirt Pleat
-                </a>
-
-                <span class="header-cart-item-info"> 1 x $19.00 </span>
-              </div>
-            </li>
-            <li class="header-cart-item flex-w flex-t m-b-12">
-              <div class="header-cart-item-img">
-                <img src="img/product/product-1.jpg" alt="IMG" />
-              </div>
-
-              <div class="header-cart-item-txt p-t-8">
-                <a
-                  href="#"
-                  class="header-cart-item-name m-b-18 hov-cl1 trans-04"
-                >
-                  White Shirt Pleat
-                </a>
-
-                <span class="header-cart-item-info"> 1 x $19.00 </span>
-              </div>
-            </li>
-          </ul>
-          <div class="w-full totalCart">
-            <div class="header-cart-total w-full p-tb-40">Total: $75.00</div>
-
-            <div class="header-cart-buttons flex-w w-full">
-              <a href="./shopping-cart.html" class="site-btn"> View Cart </a>
-
-              <a href="./checkout.html" class="site-btn"> Check Out </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="blog-hero spad">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-9 text-center">
-            <div class="blog__hero__text">
-              <h2>
-                  TƯ DUY NHANH VÀ CHẬM
-              </h2>
-              <ul>
-                <li>By Deercreative</li>
-                <li>February 21, 2019</li>
-                <li>8 Comments</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="blog-details spad">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-12">
-            <div class="blog__details__pic">
-              <img src="img/blog/details/Daniel Kahneman.webp" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="blog__details__content">
-              <div class="blog__details__share">
-                <span>share</span>
-                <ul>
-                  <li>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" class="twitter"
-                      ><i class="fa-brands fa-twitter"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#" class="youtube"
-                      ><i class="fa-brands fa-youtube"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a href="#" class="linkedin"
-                      ><i class="fa-brands fa-linkedin-in"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="blog__details__text">
-                <p>
-                  Luôn luôn có một vở kịch hấp dẫn diễn ra trong tâm trí của chúng ta,
-                  với sự tham gia của hai diễn viên chính cùng nhiều kịch tính và cao
-                  trào. Hai nhân vật này là hệ thống 1 – bản năng, tự động, cảm tính
-                  và hệ thống 2 – chín chắn, chậm rãi, toan tính. Khi đương đầu với
-                  nhau, sự tương tác của hai hệ thống này quyết định cách chúng ta
-                  nghĩ, đưa ra các phán xét, quyết định và hành động.
-                  Hệ thống 1 là nơi mà tâm trí chúng ta hoạt động theo trực giác và đột
-                  ngột, thường không có sự kiểm soát của ý thức. Bạn có thể trải nghiệm hệ thống này khi bạn nghe thấy một âm thanh rất lớn và bất ngờ. Bạn sẽ làm gì? Nhiều khả năng bạn sẽ ngay lập tức chuyển hướng chú ý của mình một cách tự động đến nó. Đó chính là hệ thống 1.
-                  Hệ thống này là một di sản từ quá trình tiến hoá của chúng ta: là những lợi thế cố hữu mang tính sống còn trong việc đưa ra những quyết định và phán đoán nhanh chóng.ng cho chính bản thân mình vào cuộc sống. Tùy vào từng hoàn cảnh môi trường, tùy vào tính cách cá nhân riêng, tùy vào từng sự việc khác nhau mà chúng ta áp dụng những điều hay ấy một cách linh hoạt mà không đánh mất đi bản sắc đặc trưng trong tính cách của mình. Ngoài ra, hãy xem cuốn sách này như là một nguồn tư liệu tham khảo hữu ích để bạn có thể dựa vào đó tìm ra một hướng ứng xử phù hợp hơn dành cho bản thân mình. Việc chúng ta có được sự CHÂN THÀNH trong giao tiếp mới chính là chìa khóa để giúp bạn có một mối quan hệ tốt hơn. Nào!! giờ thì chúng ta cùng nhau tìm hiểu cuốn sách này sẽ nói về điều gì nhé.
-                </p>
-                <p>
-                  Hệ thống 2 là hệ thống chịu trách nhiệm cho quá trình ra quyết định, lập luận và tạo ra niềm tin của 
-                  mỗi cá nhân. Nó điều khiển các hoạt động có ý thức của tâm trí như tự kiểm soát, khả năng lựa chọn và 
-                  khả năng tập trung.
-                  Tưởng tượng rằng bạn đang tìm một người phụ nữ trong đám đông. Tâm trí của bạn sẽ cố gắng tập trung 
-                  vào việc nhớ lại những đặc điểm của người đó hay bất cứ thứ gì có thể giúp tìm ra cô ấy. Sự tập trung 
-                  này giúp loại trừ những sao lãng xung quanh, khiến bạn dường như không để ý đến những người khác trong
-                   đám đông. Nếu bạn duy trì sự tập trung có chủ ý này, bạn có thể tìm ra cô ấy sau vài phút, trái lại 
-                   nếu bị phân tâm, bạn sẽ khó có thể tìm thấy cô ấy.
-                  Mối quan hệ của hai hệ thống này sẽ định hình nên hành vi của mỗi chúng ta.
-                  Tư duy lười biếng – Sự lười biếng có thể dẫn đến những sai lầm và ảnh hướng đến trí thông minh.
-                  Để xem cách hai hệ thống hoạt động ra sao, chúng ta hãy thử giải quyết bài toán nổi tiếng cây gậy
-                   và quả bóng sau:
-                  Một cây gậy và quả bóng có giá $1.10. Cây gậy đắt hơn quả bóng $1. Vậy quả bóng có giá bao nhiêu?
-                  Mức giá dường như xuất hiện ngay trong đầu bạn, $0.1 là kết quả của hệ thống tư duy cảm tính và tự 
-                  động (hệ thống 1), và nó hoàn toàn sai! Thử giải lại bài toán này xem.
-                  Bạn đã thấy mình sai ở đâu chưa? Câu trả lời đúng là quả bóng có giá $0.05.
-                  Chuyện vừa xảy ra là hệ thống 1 đã chiếm quyền và tự động trả lời dựa vào cảm tính. Nhưng nó trả lời quá nhanh.
-                </p>
-              </div>
-              <div class="blog__details__quote">
-                <i class="fa fa-quote-left"></i>
-                <p>
-                  “A reliable way to make people believe in
-                  falsehoods is frequent repetition, because
-                  familiarity is not easily distinguished
-                  from truth. Authoritarian institutions and
-                  marketers have always known this fact.”
-                </p>
-                <h6>_ Daniel Kahneman _</h6>
-              </div>
-              <div class="blog__details__text">
-                <p>
-                  Thông điệp chính trong cuốn sách này:
-                  Tư duy, nhanh và chậm cho chúng ta thấy 
-                  được rằng tâm trí chúng ta tồn tại hai hệ 
-                  thống. Hệ thống 1 hành động một cách trực giác 
-                  và không cần nhiều nỗ lực, trong khi hệ thống 2 thì có tính toán hơn, 
-                  đòi hỏi nhiều nỗ lực và sự tập trung. Những suy nghĩ và hành động của 
-                  chúng ta thay đổi tuỳ thuộc vào hệ thống nào đang kiểm soát bộ não ở thời điểm đó.
-                </p>
-                <p>
-                  <p>Lời khuyên</p>
-                  <p> 
-                                     Lặp lại những thông điệp!
-                  </p>
-                  <p>
-                    Thông điệp sẽ mang tính thuyết phục nhiều hơn nếu chúng ta nghe đi nghe lại nó. Điều này có lẽ là vì con người tiến hoá theo cách mà việc lặp đi lặp nếu không mang lại một hậu quả tai hại nào thì nó được xem là một việc có lợi.
-                    Đừng để bị ảnh hưởng bởi những sự kiện hiếm gặp chỉ bởi chúng được nhắc đi nhắc lại nhiều lần trên truyền thông.
-                    Các thảm hoạ là một phần quan trọng trong lịch sử con người, nhưng chúng ta thường đánh giá quá cao khả năng xảy ra của chúng chỉ bởi vì những hình ảnh sống động mà chúng ta có từ chúng thông qua báo đài và phim ảnh.
-                    Bạn sẽ sáng tạo hơn và có trực giác tốt hơn nếu bạn đang có một tâm trạng tốt.
-                  </p>
-                </p>
-              </div>
-              <div class="blog__details__option">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="blog__details__author">
-                      <div class="blog__details__author__pic">
-                        <img src="img/blog/details/blog-author.jpg" alt="" />
-                      </div>
-                      <div class="blog__details__author__text">
-                        <h5>Aiden Blair</h5>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="blog__details__tags">
-                      <a href="#">#Fashion</a>
-                      <a href="#">#Trending</a>
-                      <a href="#">#2020</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="blog__details__btns">
-                <div class="row">
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <a href="./blog_DacNhanTam.html" class="blog__details__btns__item">
-                      <p><span class="arrow_left"></span> Previous Pod</p>
-                      <h5>
-                        ĐẮC NHÂN TÂM
-                      </h5>
-                    </a>
-                  </div>
-                  <div class="col-lg-6 col-md-6 col-sm-6">
-                    <a
-                      href="./blog_The Secret.html"
-                      class="blog__details__btns__item blog__details__btns__item--next"
-                    >
-                      <p>Next Pod <span class="arrow_right"></span></p>
-                      <h5>THE SECRET</h5>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="blog__details__comments">
-                <h3 class="mb-5">6 Comments</h3>
-                <ul class="comment-list">
-                  <li class="comment">
-                    <div class="vcard bio">
-                      <img
-                        src="img/product/product-1.jpg"
-                        alt="Image placeholder"
-                      />
-                    </div>
-                    <div class="comment-body">
-                      <h3>John Doe</h3>
-                      <div class="meta">June 27, 2018 at 2:21pm</div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Pariatur quidem laborum necessitatibus, ipsam
-                        impedit vitae autem, eum officia, fugiat saepe enim
-                        sapiente iste iure! Quam voluptas earum impedit
-                        necessitatibus, nihil?
-                      </p>
-                      <p><a href="#" class="reply">Reply</a></p>
-                    </div>
-                  </li>
-
-                  <li class="comment">
-                    <div class="vcard bio">
-                      <img
-                        src="img/product/product-1.jpg"
-                        alt="Image placeholder"
-                      />
-                    </div>
-                    <div class="comment-body">
-                      <h3>John Doe</h3>
-                      <div class="meta">June 27, 2018 at 2:21pm</div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Pariatur quidem laborum necessitatibus, ipsam
-                        impedit vitae autem, eum officia, fugiat saepe enim
-                        sapiente iste iure! Quam voluptas earum impedit
-                        necessitatibus, nihil?
-                      </p>
-                      <p><a href="#" class="reply">Reply</a></p>
-                    </div>
-
-                    <ul class="children">
-                      <li class="comment">
-                        <div class="vcard bio">
-                          <img
-                            src="img/product/product-1.jpg"
-                            alt="Image placeholder"
-                          />
-                        </div>
-                        <div class="comment-body">
-                          <h3>John Doe</h3>
-                          <div class="meta">June 27, 2018 at 2:21pm</div>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Pariatur quidem laborum necessitatibus, ipsam
-                            impedit vitae autem, eum officia, fugiat saepe enim
-                            sapiente iste iure! Quam voluptas earum impedit
-                            necessitatibus, nihil?
-                          </p>
-                          <p><a href="#" class="reply">Reply</a></p>
-                        </div>
-
-                        <ul class="children">
-                          <li class="comment">
-                            <div class="vcard bio">
-                              <img
-                                src="img/product/product-1.jpg"
-                                alt="Image placeholder"
-                              />
-                            </div>
-                            <div class="comment-body">
-                              <h3>John Doe</h3>
-                              <div class="meta">June 27, 2018 at 2:21pm</div>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Pariatur quidem laborum
-                                necessitatibus, ipsam impedit vitae autem, eum
-                                officia, fugiat saepe enim sapiente iste iure!
-                                Quam voluptas earum impedit necessitatibus,
-                                nihil?
-                              </p>
-                              <p><a href="#" class="reply">Reply</a></p>
-                            </div>
-
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
-                                  <img
-                                    src="img/product/product-1.jpg"
-                                    alt="Image placeholder"
-                                  />
-                                </div>
-                                <div class="comment-body">
-                                  <h3>John Doe</h3>
-                                  <div class="meta">
-                                    June 27, 2018 at 2:21pm
+<!-- LINK BOOTSTRAP  -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+<!-- Css Styles -->
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+  
+  <hr>
+<div class="container d-flex justify-content-center">
+            <div class="col-md-4 ">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                          <h3><i class="fa fa-lock fa-4x"></i></h3>
+                          <h2 class="text-center">Forgot Password?</h2>
+                          <p>You can reset your password here.</p>
+                            <div class="panel-body">
+                              
+                              <form class="form">
+                                <fieldset>
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                      
+                                      <input id="emailInput" placeholder="email address" class="form-control" type="email" oninvalid="setCustomValidity('Please enter a valid email address!')" onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                    </div>
                                   </div>
-                                  <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Pariatur quidem laborum
-                                    necessitatibus, ipsam impedit vitae autem,
-                                    eum officia, fugiat saepe enim sapiente iste
-                                    iure! Quam voluptas earum impedit
-                                    necessitatibus, nihil?
-                                  </p>
-                                  <p><a href="#" class="reply">Reply</a></p>
-                                </div>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="comment">
-                    <div class="vcard bio">
-                      <img
-                        src="img/product/product-1.jpg"
-                        alt="Image placeholder"
-                      />
-                    </div>
-                    <div class="comment-body">
-                      <h3>John Doe</h3>
-                      <div class="meta">June 27, 2018 at 2:21pm</div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Pariatur quidem laborum necessitatibus, ipsam
-                        impedit vitae autem, eum officia, fugiat saepe enim
-                        sapiente iste iure! Quam voluptas earum impedit
-                        necessitatibus, nihil?
-                      </p>
-                      <p><a href="#" class="reply">Reply</a></p>
-                    </div>
-                  </li>
-                </ul>
-                <div class="blog__details__form">
-                  <h4>Leave A Comment</h4>
-                  <form action="#">
-                    <div class="row">
-                      <div class="col-lg-4 col-md-4">
-                        <input type="text" placeholder="Name" />
-                      </div>
-                      <div class="col-lg-4 col-md-4">
-                        <input type="text" placeholder="Email" />
-                      </div>
-                      <div class="col-lg-4 col-md-4">
-                        <input type="text" placeholder="Phone" />
-                      </div>
-                      <div class="col-lg-12 text-center">
-                        <textarea placeholder="Comment"></textarea>
-                        <button type="submit" class="site-btn">
-                          Post Comment
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                                  <div class="form-group">
+                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                  </div>
+                                </fieldset>
+                              </form>
+                              
+                            </div>
+                        </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="footer__about">
-              <div class="footer__logo">
-                <a href="#"><img src="img/footer-logo.png" alt="" /></a>
-              </div>
-              <p>
-                The customer is at the heart of our unique business model, which
-                includes design.
-              </p>
-              <a href="#"><img src="img/payment.png" alt="" /></a>
-            </div>
-          </div>
-          <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-            <div class="footer__widget">
-              <h6>Shopping</h6>
-              <ul>
-                <li><a href="#">Clothing Store</a></li>
-                <li><a href="#">Trending Shoes</a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">Sale</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-3 col-sm-6">
-            <div class="footer__widget">
-              <h6>Shopping</h6>
-              <ul>
-                <li><a href="#">Book</a></li>
-                <li><a href="#">Trending </a></li>
-                <li><a href="#">Accessories</a></li>
-                <li><a href="#">Sale</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-            <div class="footer__widget">
-              <h6>NewLetter</h6>
-              <div class="footer__newslatter">
-                <p>
-                  Be the first to know about new arrivals, look books, sales &
-                  promos!
-                </p>
-                <form action="#">
-                  <input type="text" placeholder="Your email" />
-                  <button type="submit">
-                    <span class="lnr lnr-chevron-right"></span>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <div class="footer__copyright__text">
-              <p>
-                Website Version 1.0.1
-                 <script>
-                   document.write(new Date().getFullYear());
-                 </script>
-               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <a href="#" class="scrool-top">
-      <img src="img/scroll-img-min.png" alt="" />
-    </a>
-
-    <!-- JS  -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+                      </div>
+    </div>
+</div>
+<!-- JS  -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>

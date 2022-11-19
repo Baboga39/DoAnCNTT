@@ -9,10 +9,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		DAO dao = new DAO();
-		List<Coment> list = dao.GetCmtbyID(1);
-		for(Coment a : list)
-		{
-			System.out.println(a);
-		}
+		String pass = dao.getPass("ngochai06122002@gmail.com");
+		System.out.println(pass);
 	}	
 	}

@@ -822,4 +822,20 @@ public class DAO {
 			}
 			return 0;
 		}
+		public String getPass(String email)
+		{
+			String query = "SELECT UPass FROM [User] WHERE Email=?";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setString(1, email);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					return rs.getString(1);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return null;
+		}
 }

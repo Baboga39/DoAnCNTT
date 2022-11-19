@@ -40,6 +40,7 @@ public class SendMailControl extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
+		DAO dao = new DAO();
 		if (session.getAttribute("cart") != null) {
 			Cart cart = (Cart) session.getAttribute("cart");
 			List<CartItem> items = cart.getItems();
@@ -52,7 +53,6 @@ public class SendMailControl extends HttpServlet {
 		String content = request.getParameter("Messeage");
 		String format = "name";
 		SendMail.sendMailToEmail(email,name,content);
-		DAO dao = new DAO();
 		dao.InsertFeedback(name, email, email, content);
 		response.sendRedirect("contact.jsp");
 	}
