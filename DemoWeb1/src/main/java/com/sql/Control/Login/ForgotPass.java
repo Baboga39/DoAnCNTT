@@ -33,7 +33,4 @@ public class ForgotPass extends HttpServlet {
 		ForgotEmail.sendMailToEmail(email, content);
 		request.getRequestDispatcher("login").forward(request, response);
 	}
-
-	
-
 }

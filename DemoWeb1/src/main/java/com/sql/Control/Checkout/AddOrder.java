@@ -20,6 +20,10 @@ import com.sql.Model.CartItem;
  */
 @WebServlet("/AddOrder")
 public class AddOrder extends HttpServlet {
+	private static java.sql.Date getCurrentDate() {
+		java.util.Date today = new java.util.Date();
+		return new java.sql.Date(today.getTime());
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -41,7 +45,7 @@ public class AddOrder extends HttpServlet {
 			StringBuilder content = new StringBuilder();
 			content.append("Dear ").append(name).append("\n");
 			content.append("Bạn vừa đặt hàng từ Shop Family. \n ");
-			content.append("Địa chỉ nhận hàng của bạn là: <b>").append(address).append("\n");
+			content.append("Địa chỉ nhận hàng của bạn là: ").append(address).append("\n");
 			content.append("Số điện thoại khi nhận hàng của bạn là ").append(phone).append("\n");
 			content.append("Các sản phẩm bạn đặt bao gồm: \n");
 			for (CartItem c : items) {
@@ -51,10 +55,24 @@ public class AddOrder extends HttpServlet {
 								.append("\n");
 					}
 			content.append("Tổng tiền: ").append(String.format("%d", cart.totalPriceSale())).append(" VNĐ").append("\n");
-			content.append("Cảm ơn bạn đã đặt hàng tại Shoes Family \n");
+			content.append("Nếu đơn hàng có sai sót xin vui lòng liên hệ số điện thoại 0814069391 \n");
+			content.append("Cảm ơn bạn đã đặt hàng tại Ngọc Hải Store \n");
 			content.append("Chủ cửa hàng ");
-			System.out.print(content.toString());
 			SendMailConfirm.sendMailToEmail(email,name,content.toString());
+			for (CartItem c : items) {
+				dao.InsertOrderItem(c.getBook().getBId(), c.getQuantity(), c.getBook().getBPriceSale());
+				}
+			if(cart.getuId() == 0)
+			{
+				dao.InsertCart(16, getCurrentDate());
+			}
+			else
+			{
+				dao.InsertCart(cart.getuId(), getCurrentDate());
+			}
+			for (CartItem c : items) {
+				dao.InsertCartItem(c.getBook().getBId(), c.getBook().getBPriceSale(), c.getcId(), c.getQuantity());
+				}
 			dao.InsertFeedback(name, email, email, content.toString());
 			dao.InsertOrder(name, country, address, postcode, phone, email, totalP, note);
 			session.removeAttribute("cart");

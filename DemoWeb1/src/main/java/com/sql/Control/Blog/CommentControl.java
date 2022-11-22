@@ -20,7 +20,10 @@ import com.sql.Model.Coment;
  */
 @WebServlet("/Comment")
 public class CommentControl extends HttpServlet {
-
+	private static java.sql.Date getCurrentDate() {
+		java.util.Date today = new java.util.Date();
+		return new java.sql.Date(today.getTime());
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
@@ -33,7 +36,7 @@ public class CommentControl extends HttpServlet {
 			String email = request.getParameter("email");
 			String phone = request.getParameter("phone");
 			List<Coment> list = dao.GetCmtbyID(blogid.getBlogID());
-			dao.InsertCmt(blogid.getBlogID(), content, name, email, phone);
+			dao.InsertCmt(blogid.getBlogID(), content, name, email, phone, getCurrentDate());
 			request.setAttribute("blogDetail", blogid);
 			request.setAttribute("listCommnent", list);
 			request.getRequestDispatcher("blog_details.jsp").forward(request, response);

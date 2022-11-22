@@ -1,4 +1,4 @@
-package sql.com.Cotrol.About;
+package com.sql.Cotrol.About;
 
 import java.io.IOException;
 import java.util.List;

@@ -8,7 +8,7 @@ public class User {
 	private String email;
 	private String uPass;
 	private String uTK;
-	private String isShell;
+	private String isBloger;
 	private String isUser;
 	private String isAdmin;
 	public int getuID() {
@@ -53,11 +53,11 @@ public class User {
 	public void setuTK(String uTK) {
 		this.uTK = uTK;
 	}
-	public String getIsShell() {
-		return isShell;
+	public String getIsBloger() {
+		return isBloger;
 	}
-	public void setIsShell(String isShell) {
-		this.isShell = isShell;
+	public void setIsBloger(String isBloger) {
+		this.isBloger = isBloger;
 	}
 	public String getIsUser() {
 		return isUser;
@@ -72,7 +72,7 @@ public class User {
 		this.isAdmin = isAdmin;
 	}
 	public User(int uID, String uName, String uPhone, String uImage, String email, String uPass, String uTK,
-			String isShell, String isUser, String isAdmin) {
+			String isBloger, String isUser, String isAdmin) {
 		super();
 		this.uID = uID;
 		this.uName = uName;
@@ -81,16 +81,15 @@ public class User {
 		this.email = email;
 		this.uPass = uPass;
 		this.uTK = uTK;
-		this.isShell = isShell;
+		this.isBloger = isBloger;
 		this.isUser = isUser;
 		this.isAdmin = isAdmin;
 	}
 	@Override
 	public String toString() {
 		return "User [uID=" + uID + ", uName=" + uName + ", uPhone=" + uPhone + ", uImage=" + uImage + ", email="
-				+ email + ", uPass=" + uPass + ", uTK=" + uTK + ", isShell=" + isShell + ", isUser=" + isUser
+				+ email + ", uPass=" + uPass + ", uTK=" + uTK + ", isBloger=" + isBloger + ", isUser=" + isUser
 				+ ", isAdmin=" + isAdmin + "]";
 	}
-	
-	
+
 }

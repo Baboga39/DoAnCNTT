@@ -1,4 +1,7 @@
 package com.sql.Model;
+
+import java.util.Date;
+
 //Hai
 public class Blog {
 	private int blogID;
@@ -7,30 +10,13 @@ public class Blog {
 	private String blogCon1;
 	private String blogCon2;
 	private String blogCon3;
-	private String dayCreate;
+	private Date dayCreate;
 	private String quotes;
 	private String title;
 	private String name;
 	private String author;
 	private String imageEmail;
 	private String authorQuotes;
-	public Blog(int blogID, int bId, String blogImage, String blogCon1, String blogCon2, String blogCon3,
-			String dayCreate, String quotes, String title , String name ,String author ,String imageEmail,String authorQuotes) {
-		super();
-		this.blogID = blogID;
-		this.bId = bId;
-		this.blogImage = blogImage;
-		this.blogCon1 = blogCon1;
-		this.blogCon2 = blogCon2;
-		this.blogCon3 = blogCon3;
-		this.dayCreate = dayCreate;
-		this.quotes = quotes;
-		this.title = title;
-		this.name = name;
-		this.author = author;
-		this.imageEmail = imageEmail;
-		this.authorQuotes = authorQuotes;
-	}
 	public int getBlogID() {
 		return blogID;
 	}
@@ -67,10 +53,10 @@ public class Blog {
 	public void setBlogCon3(String blogCon3) {
 		this.blogCon3 = blogCon3;
 	}
-	public String getDayCreate() {
+	public Date getDayCreate() {
 		return dayCreate;
 	}
-	public void setDayCreate(String dayCreate) {
+	public void setDayCreate(Date dayCreate) {
 		this.dayCreate = dayCreate;
 	}
 	public String getQuotes() {
@@ -91,14 +77,30 @@ public class Blog {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public Blog(int blogID, int bId, String blogImage, String blogCon1, String blogCon2, String blogCon3,
+			Date dayCreate, String quotes, String title, String name, String author, String imageEmail,
+			String authorQuotes) {
+		super();
+		this.blogID = blogID;
+		this.bId = bId;
+		this.blogImage = blogImage;
+		this.blogCon1 = blogCon1;
+		this.blogCon2 = blogCon2;
+		this.blogCon3 = blogCon3;
+		this.dayCreate = dayCreate;
+		this.quotes = quotes;
+		this.title = title;
+		this.name = name;
+		this.author = author;
+		this.imageEmail = imageEmail;
+		this.authorQuotes = authorQuotes;
+	}
 	public String getAuthor() {
 		return author;
 	}
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
 	public String getImageEmail() {
 		return imageEmail;
 	}
@@ -111,13 +113,6 @@ public class Blog {
 	public void setAuthorQuotes(String authorQuotes) {
 		this.authorQuotes = authorQuotes;
 	}
-	@Override
-	public String toString() {
-		return "Blog [blogID=" + blogID + ", bId=" + bId + ", blogImage=" + blogImage + ", blogCon1=" + blogCon1
-				+ ", blogCon2=" + blogCon2 + ", blogCon3=" + blogCon3 + ", dayCreate=" + dayCreate + ", quotes="
-				+ quotes + ", title=" + title + ", name=" + name + ", author=" + author + ", imageEmail=" + imageEmail
-				+ ", authorQuotes=" + authorQuotes + "]";
-	}
-	
+
 	
 }

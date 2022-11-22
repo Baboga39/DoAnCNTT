@@ -32,6 +32,7 @@ public class ShopControl extends HttpServlet {
 			List<CartItem> items = cart.getItems();
 			request.setAttribute("items", items);}
 		DAO dao = new DAO();
+		int totalBook = dao.getTotalBook();
 		List<Book> list = dao.getAllBook();
 		List<Author> listAu= dao.getAllAuthor();
 		List<Category> listC = dao.getAllCategory();
@@ -49,6 +50,7 @@ public class ShopControl extends HttpServlet {
 			endPage++;
 		}
 		request.setAttribute("tag", index);
+		request.setAttribute("totalBook", totalBook);
 		request.setAttribute("EndPage",endPage);
 		request.setAttribute("listP", listPa);
 		request.setAttribute("listC", listC);

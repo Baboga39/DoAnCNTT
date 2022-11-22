@@ -2,6 +2,7 @@ package com.sql.Dao;
 
 import java.io.File;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import com.sql.Connection.SqlServerConnection;
 import com.sql.Model.Author;
 import com.sql.Model.Blog;
 import com.sql.Model.Book;
+import com.sql.Model.Cart;
 import com.sql.Model.Category;
 import com.sql.Model.Coment;
 import com.sql.Model.Order;
@@ -644,23 +646,6 @@ public class DAO {
 	}
 
 	// Hai
-	public List<Blog> getAllBlog() {
-		List<Blog> list = new ArrayList<>();
-		String query = "SELECT * FROM Blog";
-		try {
-			conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
-			ps = conn.prepareStatement(query);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				list.add(new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13)));
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return list;
-	}
-	// Hai
 	// GET Book By Id
 	public Blog getBlogByBId(String Blogid) {
 		String query = "SELECT * FROM Blog WHERE BlogID = ?";
@@ -670,8 +655,8 @@ public class DAO {
 			ps.setString(1, Blogid);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				return new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13));
+				return new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), 
+						rs.getString(5), rs.getString(6), rs.getDate(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -704,8 +689,8 @@ public class DAO {
 			ps.setInt(1, (index - 1) * 6);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				list.add(new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),
-						rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13)));
+				list.add(new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), 
+						rs.getString(5), rs.getString(6), rs.getDate(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));	
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -775,8 +760,8 @@ public class DAO {
 		}
 		
 		//Hai
-		public void InsertCmt(int BlogId, String content, String name, String email ,String phone) {
-			String query = "INSERT INTO Review VALUES(?,?,?,?,?)";
+		public void InsertCmt(int BlogId, String content, String name, String email ,String phone ,Date date) {
+			String query = "INSERT INTO Review VALUES(?,?,?,?,?,?)";
 			try {
 				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
 				ps = conn.prepareStatement(query);
@@ -785,6 +770,7 @@ public class DAO {
 				ps.setString(3, name);
 				ps.setString(4, email);
 				ps.setString(5, phone);
+				ps.setDate(6, date);
 				ps.executeUpdate();
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -800,7 +786,7 @@ public class DAO {
 				ps.setInt(1, BlogId);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					list.add(new Coment(rs.getInt(1),rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6)));
+					list.add(new Coment(rs.getInt(1),rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6),rs.getDate(7)));
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -838,4 +824,101 @@ public class DAO {
 			}
 			return null;
 		}
+		//Hai
+		public List<Order> top5KhachHang( ) {
+			List<Order> list = new ArrayList<>();
+
+			String query = " SELECT top 5 * FROM [Order] ORDER BY Total DESC";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					list.add(new Order(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10)));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return list;
+		}
+		// Hai
+		public void InsertOrderItem(int Bookid, int Quantity, int OrderId) {
+			String query = "INSERT INTO OrderItem VALUES (? , ?, ?)";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, Bookid);
+				ps.setInt(2, Quantity);
+				ps.setInt(3, OrderId);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}	// Hai
+		public void InsertCart(int Uid, Date Creatday ) {
+			String query = "INSERT INTO CartList VALUES(?,?)";
+			try {
+				conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+				ps = conn.prepareStatement(query);
+				ps.setInt(1, Uid);
+				ps.setDate(2, Creatday);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		// Hai
+				public void InsertCartItem(int BookID, int  BPrice, int Cid, int Quantity ) {
+					String query = "INSERT INTO CartItem VALUES(?,?,?,?)";
+					try {
+						conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+						ps = conn.prepareStatement(query);
+						ps.setInt(1, BookID);
+						ps.setInt(2, BPrice);
+						ps.setInt(3, Cid);
+						ps.setInt(4, Quantity);
+						ps.executeUpdate();
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+				}
+				//Hai
+			public List<Blog> getAllBlog() {
+					List<Blog> list = new ArrayList<>();
+
+					String query = "SELECT * FROM Blog";
+					try {
+						conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+						ps = conn.prepareStatement(query);
+						rs = ps.executeQuery();
+						while (rs.next()) {
+							list.add(new Blog(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), 
+									rs.getString(5), rs.getString(6), rs.getDate(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
+						}
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+
+					return list;
+				}		
+			// Insert Book Hai
+			public void InsertBlog(String Title , int BId, String BlogImage, String BlogCon1, String BlogCon2
+					, String BlogCon3, String Quotes, String Author, String ImageDetail, String AuthorQuotes , Date date) {
+				String query = "INSERT [dbo].[Book] ([BName], [BPrice], [BPriceSale],"
+						+ " [AuID], [BCate], [BImage], [BestSeller], [NewViral], [HotSale], "
+						+ "[Popular]) VALUES (?, ?, ?, ?, ?, ?, 0, 0, 0, 0);";
+				try {
+					conn = new SqlServerConnection().getConnection();// Má»Ÿ káº¿t ná»‘i sql Server
+					ps = conn.prepareStatement(query);
+					ps.setString(1, name);
+					ps.setString(6, image);
+					ps.setString(2, price);
+					ps.setInt(4, author);
+					ps.setString(3, PriceSale);
+					ps.setInt(5, category);
+					ps.executeUpdate();
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
 }

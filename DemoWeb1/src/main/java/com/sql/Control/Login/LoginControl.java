@@ -29,6 +29,7 @@ public class LoginControl extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("user");
 		String passsword = request.getParameter("pass");
 		DAO dao = new DAO();
